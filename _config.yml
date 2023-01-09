@@ -1,29 +1,29 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+permalink: pretty
 
 # Setup
-title:               'Just another developer'
-tagline:             'Full stack development in details'
-description:         'Full stack development in details: .NET, Azure, JavaScript, SQL, Design, performance.'
-url:                 'https://fsou1.github.io/'
-baseurl:             ''
-paginate:            10
+title: "Just another developer"
+tagline: "Full stack development in details"
+description: "Full stack development in details: .NET, Azure, JavaScript, SQL, Design, performance."
+url: "https://fsou1.github.io/"
+baseurl: ""
+paginate: 10
 
 # About/contact
 author:
-  name:              Maxim Zhukov
-  email:             maxim.zhukov.dev@gmail.com
+  name: Maxim Zhukov
+  email: maxim.zhukov.dev@gmail.com
 
 # For the social list
 social_list:
-  youtube:           https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
-  stackoverflow:     https://stackoverflow.com/users/2524304/maxim-zhukov
-  github:            https://github.com/FSou1
-  linkedin:          https://www.linkedin.com/in/maxim-zhukov-0648a8b5
-  discord:           https://discord.gg/V4yMGPQzRB
-  telegram:          https://t.me/seasoneddev
+  youtube: https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
+  stackoverflow: https://stackoverflow.com/users/2524304/maxim-zhukov
+  github: https://github.com/FSou1
+  linkedin: https://www.linkedin.com/in/maxim-zhukov-dev
+  discord: https://discord.gg/V4yMGPQzRB
+  telegram: https://t.me/seasoneddev
 
 # For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
 social:
@@ -33,14 +33,14 @@ social:
     - https://twitter.com/maximzhukov_dev
     - https://stackoverflow.com/users/2524304/maxim-zhukov
     - https://github.com/FSou1
-    - https://www.linkedin.com/in/maxim-zhukov-0648a8b5
+    - https://www.linkedin.com/in/maxim-zhukov-dev
 
 # For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
 twitter:
   username: maximzhukov_dev
 
 # Custom vars
-version:             1.0.0
+version: 1.0.0
 
 exclude: [README.md, LICENSE.md]
 
