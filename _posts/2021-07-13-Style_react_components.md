@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to import CSS and style TSX React components
 tags: React TypeScript Tips
 ---
@@ -9,12 +8,13 @@ In this video I'll show you how to make your React application more reliable. Yo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/t-tQuDL-cS8" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Used commands:
-* `npx create-react-app my-app --template typescript`
-* `npm run start`
-* `npm install -D dts-css-modules-loader`
-* `git add . && git commit -m "Initial commit"`
-* `npm run eject`
-* `npm run build`
+
+- `npx create-react-app my-app --template typescript`
+- `npm run start`
+- `npm install -D dts-css-modules-loader`
+- `git add . && git commit -m "Initial commit"`
+- `npm run eject`
+- `npm run build`
 
 First, let's create a react app with typescript components. For this, in the command line we need to execute: `npx create-react-app my-app --template typescript`
 
@@ -80,7 +80,7 @@ For example, we change:
 - `className="App-header"` to `className={classes.appHeader}`
 - `classes.appLogo` and `classes.appLink` appropriately
 
-If we start the application, we will see that it works as before. 
+If we start the application, we will see that it works as before.
 
 But what if we change a class name or remove it.
 
@@ -88,12 +88,13 @@ Let's save the file.
 
 And from now on, in case of any inconsistency with our styles, we will receive an error message in the VSCode and also a compilation error in the application. In my opinion, this approach is extremely helpful and absolutely a must for any large react application.
 
-And that's all for today. I hope this approach will make your react applications more solid and save you a lot of time. 
+And that's all for today. I hope this approach will make your react applications more solid and save you a lot of time.
 
 The link to the source code is in the description of this video. And I hope to see you next time.
 
 References:
-* [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/react/import-css-classes)
-* [Configuration section](https://gist.github.com/FSou1/f06358d286bcc89fa79e93fc4169a05a)
-* [How to use CSS Modules with TypeScript and webpack](https://medium.com/@sapegin/css-modules-with-typescript-and-webpack-6b221ebe5f10)
-* [dts-css-modules-loader npm package](https://github.com/Megaputer/dts-css-modules-loader)
+
+- [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/react/import-css-classes)
+- [Configuration section](https://gist.github.com/FSou1/f06358d286bcc89fa79e93fc4169a05a)
+- [How to use CSS Modules with TypeScript and webpack](https://medium.com/@sapegin/css-modules-with-typescript-and-webpack-6b221ebe5f10)
+- [dts-css-modules-loader npm package](https://github.com/Megaputer/dts-css-modules-loader)

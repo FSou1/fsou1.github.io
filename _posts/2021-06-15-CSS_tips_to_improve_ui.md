@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 10 Excellent Tips to Improve Your UI
 tags: HTML CSS Tips
 ---
@@ -17,4 +16,5 @@ p.s. The "50 UI Tips" book is available [here](https://www.producthunt.com/posts
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O8Jw_m9DdC4" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Source code and references:
-* [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/html/50-ui-tips)
+
+- [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/html/50-ui-tips)

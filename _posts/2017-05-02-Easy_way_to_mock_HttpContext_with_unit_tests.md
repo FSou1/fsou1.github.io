@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Простой способ сделать mock HttpContext для UnitTest-ов
 tags: .NET TDD
 redirect_from: "/Easy_way_to_mock_HttpContext_with_unit_tests/"

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Setup environment variables with Deno using dotenv
 tags: Deno Dotenv
 ---
@@ -9,4 +8,5 @@ How to setup environment variables for your Deno project using the dotenv packag
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x6D8xO_ZAXg" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Links from the video
-* https://deno.land/x/dotenv@v3.1.0
+
+- https://deno.land/x/dotenv@v3.1.0

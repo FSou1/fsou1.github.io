@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 3 Ways to Solve «Your order, please» Code Kata
 tags: CodeWars
 ---

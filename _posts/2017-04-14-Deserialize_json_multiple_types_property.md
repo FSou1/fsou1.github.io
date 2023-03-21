@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Десериализация нетипизированного JSON поля на строготипизированный объект .NET с использованием Newtonsoft.Json
 tags: .NET C# JSON
 redirect_from: "/Deserialize_json_multiple_types_property/"
@@ -45,7 +44,7 @@ redirect_from: "/Deserialize_json_multiple_types_property/"
 
 В .NET нет возможности объявить тип, который будет единообразно хорошо и удобно поддерживать весь предполагаемый зоопарк значений, в связи с этим для каждого возможного варианта мы будем использовать собственный тип:
 
-1. Для телефона- `class`; 
+1. Для телефона- `class`;
 2. Для email- `string`;
 3. Для идентификатора- `long`;
 
@@ -140,7 +139,7 @@ public class ContactConverter : CustomCreationConverter<IContact> {
 }
 ```
 
-## Подключение 
+## Подключение
 
 Теперь всё что осталось сделать, так это подключить реализованный ранее конвертер в настройках `JsonSerializer`:
 
@@ -152,6 +151,6 @@ var resume = JsonConvert.DeserializeObject<Resume>(response, new ContactConverte
 
 В результате получаем строготипизиронное представление конкретных контактов с удобной возможностью дальнейшего расширение (на случай появления новых типов контактов потребуется лишь объявить модель и добавить новое значение `type` в оператор `switch`).
 
-![mt event](/images/post/deserialize_json_multiple.png)
+![mt event](/assets/images/posts/deserialize_json_multiple.png)
 
 Исходники доступны на [GitHubGist src](https://gist.github.com/FSou1/daeff50471419de025f7dab9c744df1c).

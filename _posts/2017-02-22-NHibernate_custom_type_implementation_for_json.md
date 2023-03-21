@@ -1,5 +1,4 @@
 ---
-layout: post
 title: NHibernate & JSON mapping- реализуем собственный CustomType (IUserType)
 tags: .NET NHibernate JSON
 redirect_from: "/NHibernate_custom_type_implementation_for_json/"
@@ -60,8 +59,8 @@ public class JsonMappableType<T> : IUserType where T : class
     {
         var parameter = (DbParameter) cmd.Parameters[index];
 
-        parameter.Value = value == null 
-            ? (object) DBNull.Value 
+        parameter.Value = value == null
+            ? (object) DBNull.Value
             : JsonFormatter.Serialize(value);
     }
 
@@ -98,13 +97,13 @@ public class JsonMappableType<T> : IUserType where T : class
         return JsonFormatter.Serialize(value);
     }
 
-    public SqlType[] SqlTypes 
+    public SqlType[] SqlTypes
         => new SqlType[] {new StringClobSqlType() };
 
-    public Type ReturnedType 
+    public Type ReturnedType
         => typeof(T);
 
-    public bool IsMutable 
+    public bool IsMutable
         => true;
 }
 ```
@@ -137,9 +136,10 @@ public class Call
 
 ### Будьте готовы к изменениям
 
-Хочу отдельно отметить и, возможно, предостеречь вас от вероятных неприятностей, связанных с изменением структуры данных. 
+Хочу отдельно отметить и, возможно, предостеречь вас от вероятных неприятностей, связанных с изменением структуры данных.
 
 Предположим, что сейчас всё что вам нужно- это сохранять коллекцию звонков, и вы решили последовать примеру выше. Всё работает замечательно и вы радуетесь жизни ровно до тех пор, пока не поступит новое требование - кроме информации о звонках наш сценарий должен так же хранить коллекцию сообщений, sms уведомлений или чего угодно ещё (не стоит забывать о том, какие данные и для каких нужд мы храним). В этот момент лично я могу себе представить только 2 пути:
+
 - добавить ещё одно поле для хранения новой информации;
 - начать использовать агрегаты;
 
@@ -171,10 +171,12 @@ public class ScenarioMap : ClassMap<Scenario>
 ```
 
 **Важно:**
+
 - Использование в качестве `SqlType` типа `StringClobSqlType` позволяет использовать sql'ный тип данных `nvarchar(max)` (в случае использования `StringSqlType` максимальная длина строки будет ограничена 4000 символами);
 
 Код доступен на [github gist](https://gist.github.com/FSou1/9e5b646ab4ccc47bf0fccda6c3a77d66).
 
 Ссылки по теме:
+
 - [JSON serialized object in NHibernate](http://blog.denouter.net/2015/03/json-serialized-object-in-nhibernate.html);
 - [NHibernate Custom User Type for serializing a property to JSON](https://gist.github.com/phillip-haydon/1936188).

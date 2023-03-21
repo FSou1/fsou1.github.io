@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Разворачиваем ASP.NET приложения и windows сервисы с использованием TeamCity
 tags: ASP.NET TeamCity CI/CD
 redirect_from: "/Build_and_deploy_net_with_teamcity/"
@@ -13,13 +12,13 @@ redirect_from: "/Build_and_deploy_net_with_teamcity/"
 
 Далее, добавляем новый Build step в TeamCity со следующими настройками (о них далее):
 
-![mt command](/images/post/build_deploy_teamcity_solution.png)
+![mt command](/assets/images/posts/build_deploy_teamcity_solution.png)
 
-_Solution file path*_ - путь до разворачиваемого приложения из solution’a (в моём случае solution содержит несколько проектов и для deploy’a каждого используется свой собственный build step).
+_Solution file path\*_ - путь до разворачиваемого приложения из solution’a (в моём случае solution содержит несколько проектов и для deploy’a каждого используется свой собственный build step).
 
-_Configuration_ - наименование конфигурации вашего проекта, например, для [трансформации конфигурационных файлов](https://msdn.microsoft.com/ru-ru/library/dd465318(v=vs.100).aspx), таких как web.config и app.settings.
+_Configuration_ - наименование конфигурации вашего проекта, например, для [трансформации конфигурационных файлов](<https://msdn.microsoft.com/ru-ru/library/dd465318(v=vs.100).aspx>), таких как web.config и app.settings.
 
-_Command line parameters_ - [перечень параметров](https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.build.workflow.activities.msbuild(v=vs.120).aspx), которые будут использованы в качестве аргументов при запуске msbuild.exe (сам процесс build & deploy выполняется именно этим приложением).
+_Command line parameters_ - [перечень параметров](<https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.build.workflow.activities.msbuild(v=vs.120).aspx>), которые будут использованы в качестве аргументов при запуске msbuild.exe (сам процесс build & deploy выполняется именно этим приложением).
 
 Непосредственно за deploy отвечают следующие из них:
 
@@ -52,7 +51,7 @@ _Наименование IIS узла на remote сервере:_
 
 Если всё было выполнено корректно, то результат build log будет выглядеть следующим образом:
 
-![mt command](/images/post/build_deploy_solution_service_output.png)
+![mt command](/assets/images/posts/build_deploy_solution_service_output.png)
 
 ## Разворачиваем windows сервисы
 
@@ -60,7 +59,7 @@ _Наименование IIS узла на remote сервере:_
 
 Для начала добавляем новый Build step в TeamCity со следующими настройками (о них далее):
 
-![mt command](/images/post/build_deploy_teamcity_service.png)
+![mt command](/assets/images/posts/build_deploy_teamcity_service.png)
 
 _Runner type_ - выбираем исполнение PowerShell скрипта
 
@@ -72,19 +71,10 @@ _Script source_ - непосредственно сам скрипт.
 
 1. Инициализация переменных;
 2. Подключение к remote серверу;
-3. Поиск службы по имени на remote сервере с помощью Get-WmiObject (для этого предварительно может потребоваться [конфигурация WinRM](https://technet.microsoft.com/ru-ru/library/hh921475(v=ws.11).aspx) и использование [Get-Credential](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.security/get-credential), если TeamCity запущена не от пользователя, у которого есть доступ);
-4. Подключение к доступной сетевой папке, в которой хостится служба;
+3. Поиск службы по имени на remote сервере с помощью Get-WmiObject (для этого предварительно может потребоваться [конфигурация WinRM](<https://technet.microsoft.com/ru-ru/library/hh921475(v=ws.11).aspx>) и использование [Get-Credential](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.security/get-credential), если TeamCity запущена не от пользователя, у которого есть доступ);
+4. Подключение к доступной сетевой папке, в которой хостится служба;
 5. Сборка проекта с помощью msbuild;
 6. Бекап текущего содержимого в отдельную папку (имя которой содержит время);
 7. Остановка ранее найденной службы;
 8. Копирование собранных исходников на remote сервер;
 9. Запуск службы.
-
-
-
-
-
-
-
-
-

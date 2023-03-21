@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Let's develop a Discord bot using Deno 🦕
 tags: Deno Discord TypeScript
 ---
@@ -13,4 +12,5 @@ I hope you enjoy this video.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1i3U-6gjGxw" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Source code and references:
-* [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/discord/moderator)
+
+- [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/discord/moderator)

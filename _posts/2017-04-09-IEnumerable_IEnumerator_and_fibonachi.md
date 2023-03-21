@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Перечисление и итераторы (очень кратко, на примере последовательности Фибоначчи)
 tags: .NET C#
 redirect_from: "/IEnumerable_IEnumerator_and_fibonachi/"
@@ -7,7 +6,7 @@ redirect_from: "/IEnumerable_IEnumerator_and_fibonachi/"
 
 Не вдаваясь в пространные рассуждения сегодня хотелось бы очень кратко пояснить одну из самых любимых тем интервьюеров: что нужно сделать, чтобы иметь возможность итерироваться по экземпляру класса конструкцией `foreach`.
 
-Итак, следуя терминологии Джозефа Албахари (C# 6.0 in a nutshell),- *перечеслитель*, это объект, который реализует один из интерфейсов:
+Итак, следуя терминологии Джозефа Албахари (C# 6.0 in a nutshell),- _перечеслитель_, это объект, который реализует один из интерфейсов:
 
 ```csharp
 System.Collections.IEnumerator
@@ -15,8 +14,9 @@ System.Collections.Generic.IEnumerator<T>
 ```
 
 Оператор `foreach` же выполняет итерацию по **перечислимому объекту**, где **перечислимый объект** тот, который:
+
 1. Либо реализует интерфейс `IEnumerable` или `IEnumerable<T>`;
-2. Либо имеет метод по имени `GetEnumerator`, который возвращает *перечислитель* (что на самом деле является единственным необходимым условием, т.к. наличие метода `GetEnumerator` будет и следствием реализации интерфейса `IEnumerable`);
+2. Либо имеет метод по имени `GetEnumerator`, который возвращает _перечислитель_ (что на самом деле является единственным необходимым условием, т.к. наличие метода `GetEnumerator` будет и следствием реализации интерфейса `IEnumerable`);
 
 На примере с последовательностью Фибоначчи всё должно стать понятнее.
 
@@ -127,7 +127,7 @@ class AsyncFibonachiCollection : IEnumerable<Task<int>> {
     public AsyncFibonachiCollection(int count) {
         _count = count;
     }
-    
+
     public IEnumerator<Task<int>> GetEnumerator() {
         return AsyncFibonachi(_count).GetEnumerator();
     }
@@ -162,4 +162,5 @@ public static IEnumerable<Task<int>> OddAsync(this IEnumerable<Task<int>> numeri
 ```
 
 Ссылки по теме:
+
 1. [C# 6.0 in a Nutshell](http://www.albahari.com/nutshell/);

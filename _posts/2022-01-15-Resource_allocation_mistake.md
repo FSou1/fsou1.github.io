@@ -1,5 +1,4 @@
 ---
-layout: post
 title: What happens when you don't release allocated resources
 tags: Deno Nodejs Programming
 ---

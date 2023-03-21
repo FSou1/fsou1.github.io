@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Surprising difference in array and list indexers behaviour
 tags: .NET
 redirect_from: "/Surprising_difference_in_collections_indexers/"
@@ -77,5 +76,6 @@ List's: 0
 ```
 
 Links:
+
 1. [OpCodes.Ldelema Field](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.ldelema.aspx);
 2. [Performance traps of ref locals and ref returns in C#](https://blogs.msdn.microsoft.com/seteplia/2018/04/11/performance-traps-of-ref-locals-and-ref-returns-in-c/).

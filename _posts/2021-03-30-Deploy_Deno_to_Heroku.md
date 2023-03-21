@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Let's Deploy a Deno App to Heroku 🦕
 tags: Deno Heroku CICD
 ---
@@ -15,7 +14,7 @@ We have already developed a REST API using Deno on Linux, protected it with the 
 - Run unit tests
 - Run lint
 
-![deploy-deno-to-heroku](/images/post/deno-heroku-deployment.png)
+![deploy-deno-to-heroku](/assets/images/posts/deno-heroku-deployment.png)
 
 # GitHub
 
@@ -82,7 +81,7 @@ jobs:
 
       - name: Lint
         run: deno lint --unstable
-        
+
       - name: Unit tests
         run: deno test --allow-env --allow-read
 ```
@@ -113,6 +112,7 @@ The `parse` function can be imported from the `https://deno.land/std/flags/mod.t
 Now we have the configured deployment process, with lint and unit tests. The application deploys automatically, runs in the cloud, and connects to the MongoDb Atlas. Let me know if you have any questions in the comments below, I hope you enjoyed this video, and I'll see you next time.
 
 Resources:
+
 - [Source code](https://github.com/FSou1/deploy-deno-to-heroku)
 - [How To Deploy a Deno App to Heroku (Youtube)](https://youtu.be/jC8gOkVQxdg)
 - [Deploy your deno apps to heroku](https://dev.to/ms314006/deploy-your-deno-apps-to-heroku-375h)

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Code Together «Array Diff» Code Kata
 tags: CodeWars
 ---

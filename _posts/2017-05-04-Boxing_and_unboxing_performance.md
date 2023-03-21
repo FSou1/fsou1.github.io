@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Boxing и unboxing - что быстрее?
 tags: .NET IL performance
 redirect_from: "/Boxing_and_unboxing_performance/"
@@ -11,9 +10,9 @@ redirect_from: "/Boxing_and_unboxing_performance/"
 
 Операция упаковки ([boxing](https://msdn.microsoft.com/en-us/library/yz2be5wk.aspx#Anchor_1)) характеризуется выделением памяти в управляемой куче (managed heap) под объект value type и дальнейшее присваивание указателя на этот участок памяти переменной в стеке.
 
-Распаковка ([unboxing](https://msdn.microsoft.com/en-us/library/yz2be5wk.aspx#Anchor_4)), напротив, выделяет память в стеке выполнения под объект, полученный из управляемой кучи с помощью указателя. 
+Распаковка ([unboxing](https://msdn.microsoft.com/en-us/library/yz2be5wk.aspx#Anchor_4)), напротив, выделяет память в стеке выполнения под объект, полученный из управляемой кучи с помощью указателя.
 
-Казалось бы, в обоих случаях выделяется память и особой разницы быть не должно, если бы не одно но- крайне важной деталью является область памяти. 
+Казалось бы, в обоих случаях выделяется память и особой разницы быть не должно, если бы не одно но- крайне важной деталью является область памяти.
 
 ~~Вспоминая про то, что за выделение памяти в .NET в управляемой куче отвечает сборщик мусора (Garbage Collector) важно отметить, что делает он это нелинейно, ввиду возможной её фрагментации (наличия свободных участков памяти) и поиска необходимого свободного участка требуемого размера.~~
 
@@ -84,21 +83,21 @@ public class BoxingUnboxingBenchmark {
 
 Для замера производительности была использована библиотека [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) в режиме `Release`. Далее представлен результат измерений:
 
-![boxing_and_unboxing_performance](/images/post/boxing_and_unboxing_performance.png)
+![boxing_and_unboxing_performance](/assets/images/posts/boxing_and_unboxing_performance.png)
 
-![boxing_and_unboxing_performance_second](/images/post/boxing_and_unboxing_performance_second.png)
+![boxing_and_unboxing_performance_second](/assets/images/posts/boxing_and_unboxing_performance_second.png)
 
 Сразу оговорюсь, что не могу быть твёрдо уверен в отсутствии оптимизаций компилятором итогового кода, однако, судя по IL коду, каждая из функций содержит проверяемую операцию в единственном числе.
 
-Измерения проводились на нескольких машинах с разным кол-вом `LoopCount`, однако, скорость распаковки из раза в раз превосходила упаковку в 3-6 раз. 
+Измерения проводились на нескольких машинах с разным кол-вом `LoopCount`, однако, скорость распаковки из раза в раз превосходила упаковку в 3-6 раз.
 
 Пример IL кода для упаковки `int`:
 
 ```csharp
-.method public hidebysig instance object 
+.method public hidebysig instance object
         BoxingInt() cil managed
 {
-  .custom instance void [BenchmarkDotNet.Core]BenchmarkDotNet.Attributes.BenchmarkAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [BenchmarkDotNet.Core]BenchmarkDotNet.Attributes.BenchmarkAttribute::.ctor() = ( 01 00 00 00 )
   // Code size       43 (0x2b)
   .maxstack  2
   .locals init ([0] int32 unboxed,
@@ -130,10 +129,10 @@ public class BoxingUnboxingBenchmark {
 Пример IL кода для распаковки `struct`:
 
 ```csharp
-.method public hidebysig instance valuetype ConsoleApp1.ExampleStruct 
+.method public hidebysig instance valuetype ConsoleApp1.ExampleStruct
         UnBoxingStruct() cil managed
 {
-  .custom instance void [BenchmarkDotNet.Core]BenchmarkDotNet.Attributes.BenchmarkAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [BenchmarkDotNet.Core]BenchmarkDotNet.Attributes.BenchmarkAttribute::.ctor() = ( 01 00 00 00 )
   // Code size       40 (0x28)
   .maxstack  2
   .locals init ([0] valuetype ConsoleApp1.ExampleStruct unboxed,

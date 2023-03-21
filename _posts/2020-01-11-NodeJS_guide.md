@@ -1,5 +1,4 @@
 ---
-layout: post
 title: NodeJS general guide
 tags: JavaScript NodeJS
 redirect_from: "/NodeJS_guide/"
@@ -33,11 +32,12 @@ To run the app execude `node app.js`. Once it's done, you can visit `http://loca
 # How to send/handle HTTP requests
 
 The [http](https://nodejs.org/api/http.html) module allows Node.js to transfer data over HTTP. The module is responsible for:
-* Building web servers
-* Sending client requests
-* Giving responses back to clients
-* Managing connections
-* Holding HTTP constants (methods, status codes)
+
+- Building web servers
+- Sending client requests
+- Giving responses back to clients
+- Managing connections
+- Holding HTTP constants (methods, status codes)
 
 To include the HTTP module, use the `require()` method:
 
@@ -217,7 +217,8 @@ Running on http://localhost:8080
 Source: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/#creating-a-dockerfile.
 
 More info at:
-* Docker
-    * [Official Node.js Docker Image](https://hub.docker.com/_/node/)
-    * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-    * [Official Docker documentation](https://docs.docker.com/)
+
+- Docker
+  - [Official Node.js Docker Image](https://hub.docker.com/_/node/)
+  - [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+  - [Official Docker documentation](https://docs.docker.com/)

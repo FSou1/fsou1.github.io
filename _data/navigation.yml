@@ -1,0 +1,11 @@
+main:
+  - title: "Blog"
+    url: /posts
+  - title: "Experience"
+    url: /experience/
+  - title: "Projects"
+    url: /projects/
+  - title: "CV / Resume"
+    url: "/assets/Maxim Zhukov - Full Stack Software Engineer - CV.pdf"
+  - title: "Hire Me 💻"
+    url: /hire-me

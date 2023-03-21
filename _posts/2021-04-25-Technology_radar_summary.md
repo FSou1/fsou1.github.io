@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Technology Radar Volume 24 summary
 tags: Frontend Backend
 ---

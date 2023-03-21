@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Простейшее расширение для перехвата запроса в owin pipeline
 tags: .NET Middleware
 redirect_from: "/Simple_uptime_monitoring_middleware/"
@@ -22,7 +21,7 @@ public class UptimeMonitoringMiddleware
     public async Task Invoke(IDictionary<string, object> environment)
     {
         var context = new OwinContext(environment);
-        
+
         if (context.Request.Path == PathString.FromUriComponent(_path ?? HttpPropertyKeys.UptimeMiddlewarePath))
         {
             await context.Response.WriteAsync("Uptime status: OK");

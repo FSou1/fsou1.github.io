@@ -1,5 +1,4 @@
 ---
-layout: post
 title: По мотивам Andrew Troelsen №1 - Помните ли вы?
 tags: .NET
 redirect_from: "/Troelsen_first-chapter/"
@@ -36,7 +35,7 @@ BCL (Base Class Library) - библиотека, которая содержит
 - Делегирование memory management сборщику мусора;
 - Generic типы и поля для type-safe кода и DRY;
 - Поддержка анонимных методов и как следствие inline функций;
-- Декларация частичных (partial) типов across multiple code files; 
+- Декларация частичных (partial) типов across multiple code files;
 - Strongly typed queries с использованием LINQ;
 - Поддержка анонимных типов для моделирования структуры типа on fly;
 - Возможность расширять имплементации с использованием extension methods;
@@ -46,7 +45,7 @@ BCL (Base Class Library) - библиотека, которая содержит
 
 ## Если все .NET ЯП компилируются в MSIL, то чем обусловлено их и компиляторов многообразие?
 
-Есть несколько ответов на данный вопрос. 
+Есть несколько ответов на данный вопрос.
 
 Один из них кроется в самих разработчиках и их предпочтениях, будь то к синтаксису или читабельности кода. Представим ситуацию, что в качестве официального ЯП Microsoft выбрала бы наследника BASIC или FORTRAN. Уверен, мало кто был бы рад такому выбору, поэтому принимая во внимание, что для .NET runtime не имеет большого значения что именно предшествовало процессу получения MSIL кода, наличие многообразия ЯП выглядит вполне логичным решением.
 
@@ -54,17 +53,17 @@ BCL (Base Class Library) - библиотека, которая содержит
 
 ## Компиляция в MSIL
 
-Независимо от выбранного ЯП в случае с .NET результатом компиляции всегда являются .NET binaries, хоть и совпадающие по расширению с unmanaged Windows binaries (*.dll или *.exe), однако не имеющие с ними во внутренней структуре ничего общего. Говоря о .NET binaries, они не содержат platform-specific инструкций, напротив platform-agnostic IL.
+Независимо от выбранного ЯП в случае с .NET результатом компиляции всегда являются .NET binaries, хоть и совпадающие по расширению с unmanaged Windows binaries (_.dll или _.exe), однако не имеющие с ними во внутренней структуре ничего общего. Говоря о .NET binaries, они не содержат platform-specific инструкций, напротив platform-agnostic IL.
 
-![msil of main method](/images/post/main_msil.png)
+![msil of main method](/assets/images/posts/main_msil.png)
 
 Объекты, содержащие MSIL код называют assembly. Именно они, аналогично java byte code используются в .NET runtime для компиляции в platform-specific инструкции используя JIT (Just in time) компилятор. Кроме исполняемого кода, в assembly так же находятся и метаданные, описывающие каждый объявленный тип и их члены.
 
-![metadata](/images/post/metadata.png)
+![metadata](/assets/images/posts/metadata.png)
 
 Наконец, кроме MSIL инструкций и описания всех используемых типов assembly так же содержат метаданные описывающие их самих, называемые манифестом. Так, манифест содержит в себе текущий номер сборки (версию), culture information (используемая для локализации) и список всех используемых (reference) assembly, которые требуются для корректного исполнения оной в .NET runtime.
 
-![manifest](/images/post/manifest.png)
+![manifest](/assets/images/posts/manifest.png)
 
 ## JIT и компиляция MSIL в platform-specific инструкции
 
@@ -88,7 +87,7 @@ BCL (Base Class Library) - библиотека, которая содержит
 
 Далее представлен high-level процесс компиляции, трансляции и запуска .NET приложения:
 
-![net runtime](/images/post/net_runtime.png)
+![net runtime](/assets/images/posts/net_runtime.png)
 
 Используемая литература:
 

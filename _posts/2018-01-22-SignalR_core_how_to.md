@@ -1,11 +1,10 @@
 ---
-layout: post
 title: SignalR Core- how to start creating a currency broadcaster sample
 tags: .NET SignalR Core
 redirect_from: "/SignalR_core_how_to/"
 ---
 
-Today I'd like to take a look at a new version of SignalR package (to be honest, it's official name is `Microsoft.AspNetCore.Signalr`) and implement a currency broadcaster sample. 
+Today I'd like to take a look at a new version of SignalR package (to be honest, it's official name is `Microsoft.AspNetCore.Signalr`) and implement a currency broadcaster sample.
 
 Currently (22 Jan 2018) the package is still in the alpha version, but the final release is going to be published very soon with the official AspNetCore release.
 
@@ -17,9 +16,9 @@ Let's start with adding the nuget package to our newly created project with the 
 
 Or a nuget package manager:
 
-![signalr_nuget](/images/post/signalr_nuget.png)
+![signalr_nuget](/assets/images/posts/signalr_nuget.png)
 
-After that we have to tell to our application that we are going to use the recently added SignalR package. First of all, we need to update *Startup.cs*'s `ConfigureServices` method like this:
+After that we have to tell to our application that we are going to use the recently added SignalR package. First of all, we need to update _Startup.cs_'s `ConfigureServices` method like this:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -57,8 +56,8 @@ Last but not least we need to update the method `Configure` with the `UseSignalR
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    // ..   
-            
+    // ..
+
     app.UseSignalR(routes => {
         routes.MapHub<CurrencyHub>("currency");
     });
@@ -71,7 +70,7 @@ We use the `UseSignalR` method for configuring our routes table: every `/currenc
 
 If everything has been done in a proper way then the next output should appear:
 
-![signalr_first_currency](/images/post/signalr_first_currency.png)
+![signalr_first_currency](/assets/images/posts/signalr_first_currency.png)
 
 Now your backend part of the application is fully configured and could be used as a base for a futher implementation. But as I've mentioned before, I'd like to implement a working sample so we are only half way there ;)
 
@@ -80,6 +79,7 @@ Now your backend part of the application is fully configured and could be used a
 I'd like to implement a pretty straightforward stock currencies display. This display should contain information about a set of currencies and this display should have the ability to update in real-time (once per second) for every connected user simultaneously.
 
 The sample contains three main parts:
+
 - Broadcaster as a component, which should fetch or listen to information about currency updates;
 - Notifier as a component, which should notify all the active connections with up-to-date data;
 - Display table as a currency information view;
@@ -124,7 +124,7 @@ The broadcaster part of this service has to be implemented with the usage of `Hu
 ```csharp
 private async Task Broadcast(Dictionary<string, double> data)
 {
-    await _hubManager.InvokeAllAsync("currenciesUpdated", 
+    await _hubManager.InvokeAllAsync("currenciesUpdated",
         new object[] { data });
 }
 ```
@@ -193,20 +193,20 @@ And a layout:
 
 ```html
 <table class="table table-bordered table-striped" v-if="currencies">
-    <tr>
-        <th></th>
-        <th v-for="(value, key) in currencies">{ key.toUpperCase() }</th>
-    </tr>
+  <tr>
+    <th></th>
+    <th v-for="(value, key) in currencies">{ key.toUpperCase() }</th>
+  </tr>
 
-    <tr>
-        <th>
-            <img src="http://www.xe.com/themes/xe/images/flags/rub.png" /> RUB
-        </th>
-        <td v-for="(value, key) in currencies"
-            v-bind:class="{ 'up': changes[key], 'down': !changes[key] }">
-            {{ value }}
-        </td>
-    </tr>
+  <tr>
+    <th><img src="http://www.xe.com/themes/xe/images/flags/rub.png" /> RUB</th>
+    <td
+      v-for="(value, key) in currencies"
+      v-bind:class="{ 'up': changes[key], 'down': !changes[key] }"
+    >
+      {{ value }}
+    </td>
+  </tr>
 </table>
 ```
 
@@ -220,27 +220,25 @@ It doesn't really matter which frontend framework you are going to use. The only
 
 For now it's still in alpha (and more than 158 issues are still open at [GitHub repository](https://github.com/aspnet/SignalR)), but npm module is already available: ([@aspnet/signalr-client](https://www.npmjs.com/package/@aspnet/signalr-client)):
 
->
 > **Usage**:
-> 
-> To use the client in a browser, copy *.js files from the dist/browser folder to your script folder include on your page using the *script* tag.
+>
+> To use the client in a browser, copy *.js files from the dist/browser folder to your script folder include on your page using the *script\* tag.
 >
 > **Example**:
+>
 > ```javascript
-> let connection = new signalR.HubConnection('/chat');
->  
-> connection.on('send', data => {
+> let connection = new signalR.HubConnection("/chat");
+>
+> connection.on("send", (data) => {
 >   console.log(data);
 > });
-> 
-> connection.start()
->     .then(() => connection.invoke('send', 'Hello'));
-> ```
 >
+> connection.start().then(() => connection.invoke("send", "Hello"));
+> ```
 
 And finally here is a demo of the result:
 
-![chsarp_71_ep](/images/post/currency-signalr-result.gif)
+![chsarp_71_ep](/assets/images/posts/currency-signalr-result.gif)
 
 Thanks for reading, I really hope you found it usefull and feel free to comment!
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Опыт использования MassTransit 3.0
 tags: .NET C# MassTransit RabbitMQ
 redirect_from: "/My_experience_with_MassTransit_3_0/"
@@ -62,19 +61,19 @@ private static async Task SendSmsCommand(IBus busControl)
 
 ### События
 
-Сигнализируют о случившемся событии, которое может быть интересно некоему набору подписчиков (паттерн Observer), которые на эти события реагируют, например: ConnectionEstimated, CallTerminated, SmsSent, CustomerNotified. 
+Сигнализируют о случившемся событии, которое может быть интересно некоему набору подписчиков (паттерн Observer), которые на эти события реагируют, например: ConnectionEstimated, CallTerminated, SmsSent, CustomerNotified.
 
 Работа с событиями осуществляется с помощью метода Publish (интерфейса [IPublishEndpoint](https://github.com/MassTransit/MassTransit/blob/develop/src/MassTransit/ISendEndpoint.cs)).
 
 В терминологии заложено и основное различие этих типов сообщений — команда доставляется единственному исполнителю (дабы избежать дублирования выполнения):
 
-![mt command](/images/post/mt_command.png)
+![mt command](/assets/images/posts/mt_command.png)
 
 Изображение из статьи [MassTransit Send vs. Publish](https://www.maldworth.com/2015/10/27/masstransit-send-vs-publish/)
 
 В то время как событие ориентировано на оповещение n-подписчиков, каждый из которых реагирует на случившееся событие по-своему.
 
-![mt event](/images/post/mt_event.png)
+![mt event](/assets/images/posts/mt_event.png)
 
 Изображение из статьи [MassTransit Send vs. Publish](https://www.maldworth.com/2015/10/27/masstransit-send-vs-publish/)
 
@@ -99,7 +98,7 @@ public interface ISendSms {
 ```csharp
 public interface ISmsSent {
   Guid EventId { get; }
-  DateTime SentAtUtc { get; }	
+  DateTime SentAtUtc { get; }
 }
 ```
 
@@ -121,7 +120,7 @@ public interface ISmsSent {
 
 На изображении можно увидеть созданные в рамках моего сценария exchange:
 
-![mt exchange](/images/post/mt_exchange.png)
+![mt exchange](/assets/images/posts/mt_exchange.png)
 
 В том случае, если конфигурируя receive endpoint мы указываем наименование очереди:
 
@@ -131,11 +130,11 @@ cfg.ReceiveEndpoint(host, "play_with_masstransit_queue", e => e.LoadFrom(contain
 
 то в привязках exchange сообщений можно будет увидеть следующую картину:
 
-![mt_config_queue](/images/post/mt_config_queue.png)
+![mt_config_queue](/assets/images/posts/mt_config_queue.png)
 
-Итоговый путь сообщения, тип которого имплементирует ISmsEvent, будет иметь следующий вид: 
+Итоговый путь сообщения, тип которого имплементирует ISmsEvent, будет иметь следующий вид:
 
-![mt_queue_flow](/images/post/mt_queue_flow.png)
+![mt_queue_flow](/assets/images/posts/mt_queue_flow.png)
 
 Если же конфигурация осуществляется без указания очереди:
 
@@ -143,9 +142,9 @@ cfg.ReceiveEndpoint(host, "play_with_masstransit_queue", e => e.LoadFrom(contain
 cfg.ReceiveEndpoint(host, e=> e.LoadFrom(container));
 ```
 
-То имена для последнего exchange и очереди формируются автоматически, а по завершению работы они будут удалены: 
+То имена для последнего exchange и очереди формируются автоматически, а по завершению работы они будут удалены:
 
-![mt_without_queue_flow](/images/post/mt_without_queue_flow.png)
+![mt_without_queue_flow](/assets/images/posts/mt_without_queue_flow.png)
 
 <a name="message-body"></a>
 
@@ -429,7 +428,7 @@ public class ConsumeObserver : IConsumeObserver
 
 Итоговый pipeline получения команды на отправку смс сообщения, её обработки и публикации события о её успешном выполнении выглядит следующим образом:
 
-![mt_result](/images/post/mt_result.png)
+![mt_result](/assets/images/posts/mt_result.png)
 
 <a name="new-30"></a>
 

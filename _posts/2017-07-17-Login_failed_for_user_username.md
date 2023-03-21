@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Login failed for user - когда все решения уже перепробованы 
+title: Login failed for user - когда все решения уже перепробованы
 tags: MSSQL
 redirect_from: "/Login_failed_for_user_username/"
 ---
@@ -11,12 +10,12 @@ redirect_from: "/Login_failed_for_user_username/"
 
 ## Выдать права на вкладке Login / Server Roles
 
-![instantiate function](/images/post/login_failed_1.png)
+![instantiate function](/assets/images/posts/login_failed_1.png)
 
 ## Выдать права на подключение на вкладке Login / Securables
 
-![instantiate function](/images/post/login_failed_2.png)
+![instantiate function](/assets/images/posts/login_failed_2.png)
 
 ## Разрешить смешанный вид аутентификации на вкладке Server / Security
 
-![instantiate function](/images/post/login_failed_3.png)
+![instantiate function](/assets/images/posts/login_failed_3.png)

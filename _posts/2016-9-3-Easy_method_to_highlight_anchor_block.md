@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Простой способ подсветить блок с якорем на странице с помощью CSS
 tags: CSS
 redirect_from: "/Easy_method_to_highlight_anchor_block/"
 ---
 
-Задача: необходимо подсвечивать комментарий в ленте, на который ведёт ссылка с помощью якоря (например, по ссылке "поделиться") и все комментарии, которые идут за ним (новые). 
+Задача: необходимо подсвечивать комментарий в ленте, на который ведёт ссылка с помощью якоря (например, по ссылке "поделиться") и все комментарии, которые идут за ним (новые).
 
 ## Подсвечиваем конкретный комментарий
 
@@ -13,7 +12,7 @@ redirect_from: "/Easy_method_to_highlight_anchor_block/"
 
 ```javascript
 var url = "www.aaa.com/task1/1.3.html#a_1";
-var hash = url.substring(url.indexOf("#")+1);
+var hash = url.substring(url.indexOf("#") + 1);
 ```
 
 с дальнейшим поиском элемента на странице и его подсветкой, однако, это можно сделать значительно проще, используя лишь средства CSS.
@@ -22,9 +21,9 @@ var hash = url.substring(url.indexOf("#")+1);
 
 ```css
 .comment:target {
-    background-color: lightyellow;
+  background-color: lightyellow;
 }
-``` 
+```
 
 Таким образом, мы можем подсвечивать любые блоки на странице, на которые в url'e ведёт идентификатор якоря (а на странице элемент имеет соответствующий атрибут id).
 
@@ -36,7 +35,7 @@ var hash = url.substring(url.indexOf("#")+1);
 
 ```css
 .comment:target ~ .comment {
-	background-color: lightgreen;
+  background-color: lightgreen;
 }
 ```
 

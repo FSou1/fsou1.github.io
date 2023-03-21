@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to Solve «Valid Braces» Code Kata
 tags: CodeWars
 ---

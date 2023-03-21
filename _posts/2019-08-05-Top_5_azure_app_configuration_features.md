@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Top 5 Azure App Configuration Features!
 tags: .NET Azure Architecture
 redirect_from: "/Top_5_azure_app_configuration_features/"
@@ -13,10 +12,11 @@ Hey folks. Even though App Configuration is still in preview mode, I completely 
 
 So number 5 is hierarchical namespaces.
 
-![azure-app-configuration](/images/post/top_5_az_config_image_1.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_1.png){: .center-image }
 
 To do not have a mess, we need to group our configuration values. So, on the right side you can see the keys, that are structured into the hierarchy. At the same time in the code we can:
-* Get a value by a key:
+
+- Get a value by a key:
 
 ```
 private readonly IConfiguration config;
@@ -36,7 +36,7 @@ public ActionResult Get()
 }
 ```
 
-* Bind a set of values to a specific object:
+- Bind a set of values to a specific object:
 
 ```
 [HttpGet]
@@ -51,7 +51,7 @@ public ActionResult Get()
 }
 ```
 
-* Or even bind the entire hierarchy:
+- Or even bind the entire hierarchy:
 
 ```
 [HttpGet]
@@ -73,11 +73,12 @@ Looks extremely convenient, isn't it?
 And the feature number 4 is keys labeling.
 
 What if we wanna have different configuration values for a production instance of our application. For example, we'd like to turn on encryption of our database connection. Actually, it's not a big deal:
-* We're just adding a new value with the label `Production`:
 
-![azure-app-configuration](/images/post/top_5_az_config_image_2.png){: .center-image }
+- We're just adding a new value with the label `Production`:
 
-* And include such key-values in the configuration provider:
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_2.png){: .center-image }
+
+- And include such key-values in the configuration provider:
 
 ```
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -98,28 +99,30 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     .UseStartup<Startup>();
 ```
 
-And that's it. 
+And that's it.
 
 If we start our application, we'll see, that encryption value now equals to true.
 
-![azure-app-configuration](/images/post/top_5_az_config_image_3.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_3.png){: .center-image }
 
 Quote from [MSDN](https://docs.microsoft.com/en-us/azure/azure-app-configuration/howto-best-practices#key-value-compositions):
+
 > In your code, you first retrieve the key values without any labels, and then you retrieve the same set of key values a second time with the "Development" label. When you retrieve the values the second time, the previous values of the keys are overwritten. The .NET Core configuration system allows you to "stack" multiple sets of configuration data on top of each other. If a key exists in more than one set, the last set that contains it is used.
 
 ## Import/export
 
 The feature number 3 is import and export functions. Once you've decided to use app configuration with existing applications, you'll probably need to import application settings. That's how it works:
 
-![azure-app-configuration](/images/post/top_5_az_config_image_4.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_4.png){: .center-image }
 
 Here we have an app service with two settings, which we'd like to export. So we just:
-* Open our app configuration service;
-* Click the import/export tab;
-* Select app service;
-* And click apply.
 
-![azure-app-configuration](/images/post/top_5_az_config_image_5.png){: .center-image }
+- Open our app configuration service;
+- Click the import/export tab;
+- Select app service;
+- And click apply.
+
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_5.png){: .center-image }
 
 That's it- so simple. Besides app services, you can also import data from configuration file or even a different app configuration service. Moreover, it works in the same way for export.
 
@@ -129,7 +132,7 @@ So the feature number 2 is feature management.
 
 What if we wanna have ability to enable or disable parts of our application on the fly. In this case, we should just add necessary features at the feature manager tab:
 
-![azure-app-configuration](/images/post/top_5_az_config_image_6.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_6.png){: .center-image }
 
 And use them in the code:
 
@@ -153,35 +156,37 @@ public ActionResult Get()
     var isBannerDisplayed = this
         .featureManager
         .IsEnabled("ShowDiscountBanner");
-    
+
     return this.Ok();
 }
 ```
 
 Furthermore, we can even specify a date range when a feature will be enabled. In this case the `ShowDiscountBanner` value equals to true only from 1 to 4 August:
 
-![azure-app-configuration](/images/post/top_5_az_config_image_7.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_7.png){: .center-image }
 
 ## Events
 
 And the latest feature I want you to be aware of for today is event publishing. So if we'd like our applications react to changes key values, the only thing we need to do, is just to create a new event subscription.
 
 So we:
-* Open the tab events;
-* Click create subscription;
-* Type a subscription name;
-* Review the event types we'd like to be published;
-* And specify the endpoint type (currently, there are available five different channels for communication). 
+
+- Open the tab events;
+- Click create subscription;
+- Type a subscription name;
+- Review the event types we'd like to be published;
+- And specify the endpoint type (currently, there are available five different channels for communication).
 
 I'm gonna to choose Event Hubs.
 
-![azure-app-configuration](/images/post/top_5_az_config_image_8.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_8.png){: .center-image }
 
 Once the subscription has been created, we can open the Feature manager tab and change the `UseCircuitBreaker` value to Off. So now, if we open stream analytics, we'll finally get the expected event:
 
-![azure-app-configuration](/images/post/top_5_az_config_image_9.png){: .center-image }
+![azure-app-configuration](/assets/images/posts/top_5_az_config_image_9.png){: .center-image }
 
 Quote from [MSDN](https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-app-configuration-event):
+
 > Common app configuration event scenarios include refreshing application configuration, triggering deployments, or any configuration-oriented workflow. When changes are infrequent, but your scenario requires immediate responsiveness, event-based architecture can be especially efficient.
 
 ## Summary
@@ -189,6 +194,7 @@ Quote from [MSDN](https://docs.microsoft.com/en-us/azure/azure-app-configuration
 And that's all I got for today. Thank you so much for reading, welcome to comments, and see you soon!
 
 Reference:
+
 1. [Azure App Configuration best practices](https://docs.microsoft.com/en-us/azure/azure-app-configuration/howto-best-practices);
 2. [Import or export configuration data](https://docs.microsoft.com/en-us/azure/azure-app-configuration/howto-import-export-data);
 3. [Feature management overview](https://docs.microsoft.com/en-us/azure/azure-app-configuration/concept-feature-management);

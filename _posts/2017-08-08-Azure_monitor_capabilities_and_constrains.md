@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Azure Monitor- возможности и ограничения
 tags: Azure Cloud
 redirect_from: "/Azure_monitor_capabilities_and_constrains/"
@@ -19,7 +18,7 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 
 Представленное ниже изображение характерно для вычисляемых (исполняемых) ресурсов и отличается от невычисляемых лишь наличием Application Logs and metrics.
 
-![monitor capabilities](/images/post/monitoring_azure_resources-compute_v6.png)
+![monitor capabilities](/assets/images/posts/monitoring_azure_resources-compute_v6.png)
 
 ### Activity log
 
@@ -36,7 +35,7 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 - Добавления правил оповещения;
 - Анализа в PowerBI;
 
-![metrics and events](/images/post/activity_log_overview_v3.png)
+![metrics and events](/assets/images/posts/activity_log_overview_v3.png)
 
 ### Metrics and Events
 
@@ -44,13 +43,13 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 
 Если мы хотим предпринять действие основанное на значении метрики, то в этом нам поможет система оповещения и реагирования, в арсенале которой присутствует возможность отправлять email уведомления, вызывать webhook или запускать logic app (с помощью request trigger).
 
-![metrics and events](/images/post/metrics_overview_v4.png)
+![metrics and events](/assets/images/posts/metrics_overview_v4.png)
 
 ### Log search
 
 Благодаря log search и специализированному языку запросов доступна возможность выполнять query/filter/aggregate применимо к логам и метрикам, а также визуализировать итоговые результаты в требуемом виде (table, list, bar).
 
-![log search](/images/post/oms-search-select.png)
+![log search](/assets/images/posts/oms-search-select.png)
 
 ### Autoscale
 
@@ -59,7 +58,7 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 - На основании значения метрики- например, увеличить количество запущенных экземпляров того или иного ресурса в случае превышения использования % CPU или загрузки ОЗУ;
 - На основании расписания- например, если нагрузка в выходные дни снижается, то можно уменьшать и количество экземпляров до необходимого минимума;
 
-![autoscale overview](/images/post/autoscale_overview_v4.png)
+![autoscale overview](/assets/images/posts/autoscale_overview_v4.png)
 
 ### Azure Service Health
 
@@ -67,7 +66,7 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 
 Также появляется возможность заблаговременно подготовиться к плановому обслуживанию Azure.
 
-![azure service health](/images/post/azure-service-health-overview-7.png)
+![azure service health](/assets/images/posts/azure-service-health-overview-7.png)
 
 ## Ограничения
 
@@ -89,12 +88,10 @@ redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 
 Полезные ссылки:
 
-1. [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor); 
-2. [Overview of the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs); 
+1. [Overview of Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor);
+2. [Overview of the Azure Activity Log](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs);
 3. [Overview of metrics in Microsoft Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-metrics);
 4. [Overview of autoscale in Microsoft Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-autoscale);
 5. [Azure Service Health overview](https://docs.microsoft.com/en-us/azure/service-health/service-health-overview);
 6. [Supported Resource Types through Azure Resource Health](https://docs.microsoft.com/en-us/azure/service-health/resource-health-checks-resource-types);
 7. [Azure Monitor videos](https://azure.microsoft.com/ru-ru/resources/videos/index/?services=monitor);
-
-

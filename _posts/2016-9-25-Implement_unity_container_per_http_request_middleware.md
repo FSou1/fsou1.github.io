@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Использование единого IoC Container'a в рамках HTTP запроса между Web API и OWIN Middleware
 tags: ASP.NET IoC OWIN
 redirect_from: "/Implement_unity_container_per_http_request_middleware/"
@@ -11,7 +10,7 @@ redirect_from: "/Implement_unity_container_per_http_request_middleware/"
 
 Проекты Web API 2 конфигурируются с помощью OWIN интерфейса IAppBuilder, который призван помочь построить pipeline обработки входящего запроса.
 
-![owin pipeline](/images/post/owin-pipeline.png)
+![owin pipeline](/assets/images/posts/owin-pipeline.png)
 
 На изображении выше виден жизненный цикл запроса,- он проходит по всем компонентам цепочки, затем попадает в Web API (что также является отдельным компонентом) и возвращается обратно, формируя или декорируя ответ от сервера.
 
@@ -29,7 +28,7 @@ redirect_from: "/Implement_unity_container_per_http_request_middleware/"
 ```csharp
 // Configure our parent container
 var container = UnityConfig.GetConfiguredContainer();
-            
+
 // Pass our parent container to HttpConfiguration (Web API)
 var config = new HttpConfiguration {
     DependencyResolver = new UnityDependencyResolver(container)
@@ -119,7 +118,7 @@ public static IDependencyScope GetDependencyScope(this HttpRequestMessage reques
     result = dependencyResolver.BeginScope();
 
     request.Properties[HttpPropertyKeys.DependencyScope] = result;
-    request.RegisterForDispose(result);    
+    request.RegisterForDispose(result);
 
     return result;
 }
@@ -133,9 +132,9 @@ public static IDependencyScope GetDependencyScope(this HttpRequestMessage reques
 2. Контейнер, созданный в UnityContainerPerRequestMiddleware;
 3. Контейнер, созданный в Web API.
 
-Для Web API это выглядит вполне логичным в том случае, когда оно является единственным местом обработки запроса,- контейнер создается вначале и уничтожается в конце (это ровно то, чего мы стараемся добиться). 
+Для Web API это выглядит вполне логичным в том случае, когда оно является единственным местом обработки запроса,- контейнер создается вначале и уничтожается в конце (это ровно то, чего мы стараемся добиться).
 
-Однако, в данный момент Web API является лишь одним из звеньев в pipeline, а значит от создания собственного контейнера придется отказаться,- нашей задачей является переопределить данное поведение и указать контейнер, в рамках которого Web API требуется создавать контроллеры и Resolve’ить зависимости. 
+Однако, в данный момент Web API является лишь одним из звеньев в pipeline, а значит от создания собственного контейнера придется отказаться,- нашей задачей является переопределить данное поведение и указать контейнер, в рамках которого Web API требуется создавать контроллеры и Resolve’ить зависимости.
 
 ## Решение
 
@@ -154,7 +153,7 @@ public class ControllerActivator : IHttpControllerActivator
         var container = request.GetOwinContext().Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 
         // Resolve requested IHttpController using current container
-        // prevent DefaultControllerActivator's behaviour of creating child containers 
+        // prevent DefaultControllerActivator's behaviour of creating child containers
         var controller = (IHttpController)container.Resolve(controllerType);
 
         // Dispose container that would dispose each of container's registered service
@@ -175,7 +174,7 @@ var config = new HttpConfiguration {
     DependencyResolver = new UnityDependencyResolver(container)
 };
 
-// Use our own IHttpControllerActivator implementation 
+// Use our own IHttpControllerActivator implementation
 // (to prevent DefaultControllerActivator's behaviour of creating child containers per request)
 config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator());
 
@@ -249,7 +248,7 @@ public static void RegisterTypes(IUnityContainer container)
 2. HierarchicalLifetimeManager - создание единственного экземпляра в рамках контейнера (где мы добились того, что контейнер единый в рамках HTTP запроса);
 3. TransientLifetimeManager - создание экземпляра при каждом обращении (Resolve).
 
-![unity-per-request-middleware-result](/images/post/unity-per-request-middleware-result.png)
+![unity-per-request-middleware-result](/assets/images/posts/unity-per-request-middleware-result.png)
 
 В изображении выше отображены GetHashCode’ы зависимостей в разрезе нескольких HTTP запросов, где:
 

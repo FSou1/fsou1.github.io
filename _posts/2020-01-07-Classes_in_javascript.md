@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Class, extends and super in JavaScript
 tags: JavaScript
 redirect_from: "/Classes_in_javascript/"
@@ -51,7 +50,7 @@ class Person {
  constructor(name, age) {
   this.name = name;
   this.age = age;
- }  
+ }
 
  greet() {
   console.log(`Hey, my name is ${this.name}`);

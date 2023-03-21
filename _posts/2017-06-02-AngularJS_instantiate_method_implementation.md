@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs
 tags: AngularJS JavaScript
 redirect_from: "/AngularJS_instantiate_method_implementation/"
@@ -7,8 +6,7 @@ redirect_from: "/AngularJS_instantiate_method_implementation/"
 
 Задумывались ли вы когда-нибудь, как создаются экземпляры используемых вами типов angularJS? Контроллеры, фабрики, сервисы, декораторы, значения- буквально каждый из них в конце концов передаётся на исполнение в функцию [instantiate](https://github.com/angular/angular.js/blob/master/src/auto/injector.js#L906) класса $injector, где их поджидает довольно занимательная конструкция, о которой сегодня и хотелось бы поговорить.
 
-
-![instantiate function](/images/post/instantiate-method-top.png)
+![instantiate function](/assets/images/posts/instantiate-method-top.png)
 
 А именно, речь пойдёт о следующей строке:
 
@@ -32,7 +30,7 @@ function Animal(name, sound) {
 "Что может быть проще"- скажете вы и будете правы: `var dog = new Animal('Dog', 'Woof!')`. Оператор `new`- это первое, что нам потребуется, чтобы получить экземпляр вызова конструктора Animal. Небольшое отступление о том, как работает new:
 
 > Когда исполняется new Foo(...) , происходит следующее:
-> 
+>
 > 1. Создается новый объект, наследующий Foo.prototype.
 > 2. Вызывается конструктор — функция Foo с указанными аргументами и this, привязанным к только что созданному объекту. new Foo эквивалентно new Foo(), то есть если аргументы не указаны, Foo вызывается без аргументов.
 > 3. Результатом выражения new становится объект, возвращенный конструктором. Если конструктор не возвращет объект явно, используется объект из п. 1. (Обычно конструкторы не возвращают значение, но они могут делать это, если нужно переопределить обычный процесс создания объектов.)
@@ -43,7 +41,7 @@ function Animal(name, sound) {
 
 ```javascript
 function CreateAnimal(name, sound) {
-    return new Animal(name, sound);
+  return new Animal(name, sound);
 }
 ```
 
@@ -58,11 +56,11 @@ function CreateAnimal(name, sound) {
 
 ```javascript
 function Create(ctorFunc, name, sound) {
-    return new (ctorFunc.bind(null, name, sound));
+  return new (ctorFunc.bind(null, name, sound))();
 }
 
-console.log( Create(Animal, 'Dog', 'Woof') );
-console.log( Create(Human, 'Person') );
+console.log(Create(Animal, "Dog", "Woof"));
+console.log(Create(Human, "Person"));
 ```
 
 Небольшое отступление о том, как работает bind:
@@ -91,7 +89,7 @@ console.log( Create(Human, 'Person') );
 
 Здесь начинается, пожалуй, самая сложная часть, т.к. нам предстоит используя apply установить контекстом для функции bind наш конструктор (аналогично `ctorFunc.bind`), а в качестве аргументов для функции bind (не забывая о том, что первым аргументом является устанавливаемый контекст) передать смещенный на одну позицию вправо массив параметров конструктора, используя `ctorArgs.unshift(null)`.
 
-![instantiate function](/images/post/instantiate_function.png)
+![instantiate function](/assets/images/posts/instantiate_function.png)
 
 Функция bind недоступна в контексте выполнения Create, т.к. им является объект window, зато доступна посредством прототипа функции `Function.prototype`.
 
@@ -100,33 +98,30 @@ console.log( Create(Human, 'Person') );
 ```javascript
 function Create(ctorFunc, ctorArgs) {
   ctorArgs.unshift(null);
-  return new (Function.prototype.bind.apply(ctorFunc, ctorArgs ));
+  return new (Function.prototype.bind.apply(ctorFunc, ctorArgs))();
 }
 
-console.log( Create(Animal, ['Dog', 'Woof']) );
-console.log( Create(Human, ['Person', 'John', 'Engineer', 'Moscow']) );
-
+console.log(Create(Animal, ["Dog", "Woof"]));
+console.log(Create(Human, ["Person", "John", "Engineer", "Moscow"]));
 ```
 
 Возвращаясь к angularJS, мы можем заметить, что в качестве Animal и Human, например, выступают конструкторы фабрик или других типов, а в качестве массива аргументов `['Dog', 'Woof']`- найденные (разрезолвленные) по имени зависимости:
 
 ```javascript
-angular
-    .module('app')
-    .factory(function($scope) {
-        // constructor
-    }) 
+angular.module("app").factory(function ($scope) {
+  // constructor
+});
 ```
 
 или
 
 ```javascript
-angular
-    .module('app')
-    .factory(['$scope', function($scope) { 
-        // constructor 
-    }
-]) 
-``` 
+angular.module("app").factory([
+  "$scope",
+  function ($scope) {
+    // constructor
+  },
+]);
+```
 
 Всё что остаётся сделать для реализации полноценного метода $injector.instantiate, это найти функцию конструктора и получить необходимые аргументы и можно создавать :)

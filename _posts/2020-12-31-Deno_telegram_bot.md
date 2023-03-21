@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Let's code a Telegram bot using Deno
 tags: Deno Telegram TypeScript
 ---
@@ -13,4 +12,5 @@ Since you may not be familiar with the approach, do not hesitate to post any com
 <iframe width="560" height="315" src="https://www.youtube.com/embed/buhTrROCvSk" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Source code and references:
-* [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/telegram/shibes-as-a-service)
+
+- [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/telegram/shibes-as-a-service)

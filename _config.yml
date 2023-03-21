@@ -1,51 +1,147 @@
-# Permalinks
+# Welcome to Jekyll!
 #
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink: pretty
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Setup
-title: "Just another developer"
-tagline: "Full stack development in details"
-description: "Full stack development in details: .NET, Azure, JavaScript, SQL, Design, performance."
-url: "https://fsou1.github.io/"
-baseurl: ""
-paginate: 10
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: "Maxim Zhukov"
+masthead_title: " "
+email: maxim.zhukov.dev@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
 
-# About/contact
-author:
-  name: Maxim Zhukov
-  email: maxim.zhukov.dev@gmail.com
+twitter_username: username
+github_username: fsou1
+minimal_mistakes_skin: default
+search: true
+logo: /assets/images/logo.png
 
-# For the social list
-social_list:
-  youtube: https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
-  stackoverflow: https://stackoverflow.com/users/2524304/maxim-zhukov
-  github: https://github.com/FSou1
-  linkedin: https://www.linkedin.com/in/maxim-zhukov-dev
-  discord: https://discord.gg/V4yMGPQzRB
-  telegram: https://t.me/seasoneddev
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
-social:
-  name: Maxim Zhukov
-  links:
-    - https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
-    - https://twitter.com/maximzhukov_dev
-    - https://stackoverflow.com/users/2524304/maxim-zhukov
-    - https://github.com/FSou1
-    - https://www.linkedin.com/in/maxim-zhukov-dev
+include:
+  - _pages
 
-# For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
-twitter:
-  username: maximzhukov_dev
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
-# Custom vars
-version: 1.0.0
-
-exclude: [README.md, LICENSE.md]
-
+# Plugins (previously gems:)
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name: "Maxim Zhukov"
+  avatar: "/assets/images/bio-photo.png"
+  bio: "I'm a Full Stack Software Engineer and I love it ❤️"
+  location: "Houston, TX"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:maxim.zhukov.dev@gmail.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/maxim-zhukov-dev/"
+    - label: "CV / Resume"
+      icon: "fas fa-fw fa-file"
+      url: "/assets/Maxim Zhukov - Full Stack Software Engineer - CV.pdf"
+    - label: "Hire Me"
+      icon: "fas fa-fw fa-link"
+      url: "/hire-me"
+
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:maxim.zhukov.dev@gmail.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/maxim-zhukov-dev/"
+    - label: "CV / Resume"
+      icon: "fas fa-fw fa-file"
+      url: "/assets/Maxim Zhukov - Full Stack Software Engineer - CV.pdf"
+    - label: "Hire Me"
+      icon: "fas fa-fw fa-link"
+      url: "/hire-me"
+
+collections:
+  experience:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _experience
+  - scope:
+      path: ""
+      type: experience
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      classes: wide
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      classes: wide
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

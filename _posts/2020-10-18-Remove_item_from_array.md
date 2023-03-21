@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Remove an Item From an Array
 tags: JavaScript
 ---

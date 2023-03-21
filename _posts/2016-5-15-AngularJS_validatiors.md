@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Кратко о валидаторах в AngularJS
 tags: AngularJS JavaScript
 redirect_from: "/AngularJS_validatiors/"
@@ -32,33 +31,34 @@ redirect_from: "/AngularJS_validatiors/"
 
 До выхода angularjs версии 1.3 мы можем сделать это следующим образом, добавив нашу логику проверки в массивы `$parsers` и `$formatters`, возвращая из функции либо `undefined`, либо корректное значение (это является одной из причин, почему не удастся установить некорректное начальное значение с помощью `ngModel` и почему я отказался от возврата `undefined`).
 
-Так же нам потребуется вызывать функцию `$setValidity()`, передавая в неё наименование валидатора и результат проверки для дальнейшей обработки (например, отображения ошибок). 
+Так же нам потребуется вызывать функцию `$setValidity()`, передавая в неё наименование валидатора и результат проверки для дальнейшей обработки (например, отображения ошибок).
 
 [**Jsfiddle demo**](https://jsfiddle.net/pnsdbzLr/1/):
 
 ```javascript
 function numericDirective() {
-    return {
-        require: 'ngModel',
-        link: function(scope, elem, attr, ctrl) {
-            var numericRegexp = /^\d+$/;
+  return {
+    require: "ngModel",
+    link: function (scope, elem, attr, ctrl) {
+      var numericRegexp = /^\d+$/;
 
-            var validator = function(viewValue) {
-                var isValid = numericRegexp.test(viewValue)
-                        && (viewValue % 2) === 0
-                        && (viewValue % 7) === 0;
+      var validator = function (viewValue) {
+        var isValid =
+          numericRegexp.test(viewValue) &&
+          viewValue % 2 === 0 &&
+          viewValue % 7 === 0;
 
-                ctrl.$setValidity('numericOnly', isValid);
+        ctrl.$setValidity("numericOnly", isValid);
 
-                // we should always return value and don't return undefined
-                // otherwise we won't set invalid value as default ( e.g. = 'q1' )
-                return viewValue;
-            };
+        // we should always return value and don't return undefined
+        // otherwise we won't set invalid value as default ( e.g. = 'q1' )
+        return viewValue;
+      };
 
-            ctrl.$parsers.push(validator);
-            ctrl.$formatters.push(validator);
-        }
-    }
+      ctrl.$parsers.push(validator);
+      ctrl.$formatters.push(validator);
+    },
+  };
 }
 ```
 
@@ -72,22 +72,24 @@ function numericDirective() {
 
 ```javascript
 function numericDirective() {
-    return {
-        require: 'ngModel',
-        link: function(scope, elem, attr, ctrl) {
-            var numericRegexp = /^\d+$/;
+  return {
+    require: "ngModel",
+    link: function (scope, elem, attr, ctrl) {
+      var numericRegexp = /^\d+$/;
 
-            var validator = function(viewValue) {
-                return numericRegexp.test(viewValue)
-                        && (viewValue % 2) === 0
-                        && (viewValue % 7) === 0;
-            };
+      var validator = function (viewValue) {
+        return (
+          numericRegexp.test(viewValue) &&
+          viewValue % 2 === 0 &&
+          viewValue % 7 === 0
+        );
+      };
 
-            ctrl.$validators.numericOnly = function (modelValue, viewValue) {
-                return validator(viewValue);
-            };
-        }
-    }
+      ctrl.$validators.numericOnly = function (modelValue, viewValue) {
+        return validator(viewValue);
+      };
+    },
+  };
 }
 ```
 
@@ -100,26 +102,27 @@ function numericDirective() {
 ```javascript
 function numericDirective($q, $timeout) {
   return {
-      require: 'ngModel',
-      link: function(scope, elem, attr, ctrl) {
-          var numericRegexp = /^\d+$/;
+    require: "ngModel",
+    link: function (scope, elem, attr, ctrl) {
+      var numericRegexp = /^\d+$/;
 
-          var validator = function(viewValue) {
-              var isValid = numericRegexp.test(viewValue)
-                      && (viewValue % 2) === 0
-                      && (viewValue % 7) === 0;
+      var validator = function (viewValue) {
+        var isValid =
+          numericRegexp.test(viewValue) &&
+          viewValue % 2 === 0 &&
+          viewValue % 7 === 0;
 
-              return $q(function(resolve, reject) {
-                  return $timeout(function() {
-                      return isValid ? resolve ('Valid') : reject ('Invalid')
-                  }, 1500);
-              });
-          };
+        return $q(function (resolve, reject) {
+          return $timeout(function () {
+            return isValid ? resolve("Valid") : reject("Invalid");
+          }, 1500);
+        });
+      };
 
-          ctrl.$asyncValidators.numericOnly = function (modelValue, viewValue) {
-              return validator(viewValue);
-          };
-      }
-  }
+      ctrl.$asyncValidators.numericOnly = function (modelValue, viewValue) {
+        return validator(viewValue);
+      };
+    },
+  };
 }
 ```
