@@ -60,11 +60,9 @@ plugins:
 author:
   name: "Maxim Zhukov"
   avatar: "/assets/images/bio-photo.png"
-  bio: "I'm a Full Stack Software Engineer and I love it ❤️"
+  bio: "Software engineer, MSCS graduate, passionate about programming ❤️"
   location: "Houston, TX"
   links:
-    - label: "Master's in Computer Science"
-      icon: "fas fa-fw fa-envelope-square"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:maxim.zhukov.dev@gmail.com"
