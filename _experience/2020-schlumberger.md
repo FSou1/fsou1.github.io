@@ -19,7 +19,7 @@ gallery:
     image_path: /assets/images/experience/drillops-3.png
 ---
 
-As the lead software engineer on a team of 5, I had the pleasure of working on a desktop application where I focused on developing React components and designing the Google Cloud integration. One of my biggest achievements was implementing a plug-in based software architecture using Node.js and Node-API, which was a real team effort! Overall, we were able to deliver a high-quality application with efficient performance and great features. It was a great experience working with such a robust and goal-oriented team!
+As the lead software engineer on a team of 5, I had the pleasure of working on a desktop application where I focused on developing React components and designing the Google Cloud integration. One of my biggest achievements was implementing a plug-in based software architecture using Node.js and Node-API, which was a real team effort! Overall, we were able to deliver a high-quality application with efficient performance and great features. It was a fantastic experience working with such a robust and goal-oriented team!
 
 ## Project
 
