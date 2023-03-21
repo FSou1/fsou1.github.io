@@ -60,7 +60,7 @@ plugins:
 author:
   name: "Maxim Zhukov"
   avatar: "/assets/images/bio-photo.png"
-  bio: "Software engineer, MSCS graduate, passionate about programming ❤️"
+  bio: "Software Engineer, MSCS graduate, passionate about programming ❤️"
   location: "Houston, TX"
   links:
     - label: "Email"
