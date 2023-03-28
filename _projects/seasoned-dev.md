@@ -1,6 +1,6 @@
 ---
 title: "SeasonedDev (Telegram, youtube)"
-order: 1
+order: 2
 header:
   teaser: /assets/images/projects/seasoned-dev.png
 sidebar:
