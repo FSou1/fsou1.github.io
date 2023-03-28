@@ -2,7 +2,7 @@
 title: "QuickReply (Chrome)"
 order: 3
 header:
-  teaser: /assets/images/projects/quick-reply.png
+  teaser: /assets/images/projects/quick-reply-teaser.png
 sidebar:
   - title: "Tech stack"
     text: "JavaScript, Angular, Chrome Extension"

@@ -2,7 +2,7 @@
 title: "Board Game Deals discord server"
 order: 1
 header:
-  teaser: /assets/images/projects/board-game-deals-logo-teaser.png
+  teaser: /assets/images/projects/board-game-deals-teaser.png
 sidebar:
   - title: "Tech stack"
     text: "Node.js, Google Cloud"

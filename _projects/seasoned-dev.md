@@ -2,7 +2,7 @@
 title: "SeasonedDev (Telegram, youtube)"
 order: 2
 header:
-  teaser: /assets/images/projects/seasoned-dev.png
+  teaser: /assets/images/projects/seasoned-dev-teaser.png
 sidebar:
   - title: "Status"
     text: "Inactive (2020 - 2022)"
