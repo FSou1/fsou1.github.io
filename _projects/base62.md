@@ -14,8 +14,6 @@ sidebar:
     text: "[Repository](https://github.com/FSou1/Base62.Conversion)"
 ---
 
-# Base62.Conversion
-
 Base conversion is an approach commonly used for URL shorteners. Base conversion helps to convert the same number between its different number representation systems.
 
 The conversion table is `[0-9a-zA-Z]`:
