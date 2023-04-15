@@ -19,7 +19,7 @@ My favorite two examples look like marriage and divorce:
 [...'👨‍👩‍👧']   // ['👨', '‍', '👩', '‍', '👧']
 ```
 
-I've group every emoji by it's length, so you don't have to (https://github.com/FSou1/EmojiGroupedByLength).
+I've group every emoji by its length, so you don't have to (https://github.com/FSou1/EmojiGroupedByLength).
 
 Happy Friday.
 
