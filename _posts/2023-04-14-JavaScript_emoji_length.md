@@ -1,5 +1,5 @@
 ---
-title: [...'👨‍👩‍👧'] // ?
+title: Friday Quiz or Emoji are weird in JavaScript
 tags: JavaScript Emoji Length
 ---
 
