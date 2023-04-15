@@ -19,8 +19,8 @@ My favorite two examples look like marriage and divorce:
 [...'👨‍👩‍👧']   // ['👨', '‍', '👩', '‍', '👧']
 ```
 
-I've group every emoji by its length, so you don't have to (https://github.com/FSou1/EmojiGroupedByLength).
+I've group every emoji by its length, so you don't have to [https://github.com/FSou1/EmojiGroupedByLength](https://github.com/FSou1/EmojiGroupedByLength).
 
 Happy Friday.
 
-More theory: https://gomakethings.com/emoji-are-still-weird-but-modern-browser-methods-help/
+More theory: [https://gomakethings.com/emoji-are-still-weird-but-modern-browser-methods-help/](https://gomakethings.com/emoji-are-still-weird-but-modern-browser-methods-help/)
