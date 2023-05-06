@@ -1,6 +1,6 @@
 ---
-title: Friday Quiz or Emoji are weird in JavaScript
-tags: JavaScript Emoji Length
+title: Keywords Highlighter chrome extension is now available
+tags: JavaScript React Project Chrome
 ---
 
 I'm excited to announce that the first version of my new Chrome extension, [Keywords Highlighter](https://chrome.google.com/webstore/detail/keywords-highlighter/lmaonnpepldfnbkbmhkkficpmjdlojnn), is now available for download on the Chrome Web Store! You can also find the code on the project's GitHub repository.
