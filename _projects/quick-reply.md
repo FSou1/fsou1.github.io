@@ -1,6 +1,6 @@
 ---
 title: "QuickReply (Chrome)"
-order: 3
+order: 4
 header:
   teaser: /assets/images/projects/quick-reply-teaser.png
 sidebar:
