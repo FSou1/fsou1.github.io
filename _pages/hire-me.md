@@ -4,10 +4,12 @@ title: "Hire Me"
 classes: wide
 ---
 
-I'm a Full Stack Developer and Microsoft Certified Azure Architect with over 15 years of experience in software development, solution design, and performance optimization.
+I’m a Staff Software Engineer and Solution Architect with 15+ years of experience building scalable web platforms, modern UI systems, and high-performance digital products.
 
-Although I work on a variety of projects, I'm always open to new opportunities and challenges. No matter the size or difficulty of your project, I'm happy to help, so don't hesitate to get in touch with me anytime.
+Currently, I lead the architecture and development of a cross-org React component platform at PayPal that powers every page of PayPal.com and Venmo.com. My work focuses on frontend architecture, design systems, web performance, accessibility, developer experience, and large-scale modernization.
 
-My areas of specialization include Solution Architecture, .NET Core, React, Node.js, Azure, JavaScript, and SQL.
+Over the course of my career, I’ve worked across both frontend and backend systems, with hands-on experience in React, TypeScript, JavaScript, Node.js, .NET Core, Azure, APIs, SQL, and cloud-based architecture. I enjoy solving complex technical problems, improving engineering quality, and building systems that help teams move faster with confidence.
 
-To get in touch with me, simply shoot an email over to [maxim.zhukov.dev@gmail.com](maxim.zhukov.dev@gmail.com) with the subject line "Looking for a Software Developer" and a brief description of your project or requirements. I'll get back to you as soon as possible, usually within a few hours.
+I’m always open to interesting opportunities, consulting work, and challenging projects- especially those involving frontend platforms, design systems, performance optimization, or full-stack architecture.
+
+To get in touch, email me at [maxim.zhukov.dev@gmail.com](maxim.zhukov.dev@gmail.com) with a short note about your project, role, or idea.
