@@ -6,9 +6,9 @@ classes: wide
 
 How can I help you? As a…
 
-- Frontend Architect
-- Solution Architect
-- Full-Stack Developer
+- [Frontend Architect](#frontend-architect)
+- [Solution Architect](#solution-architect)
+- [Full-Stack Developer](#full-stack-developer)
 
 ## About Me
 
