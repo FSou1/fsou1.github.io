@@ -18,7 +18,7 @@ tags:
 
 ## The Problem With Visual Tests
 
-I work on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, more than 6,000 pages.
+I work on a monorepo of React component libraries (the same ones whose docs I [audited with AI]({% post_url 2026-5-23-Pair_programming_with_ai_auditing_component_docs %})). They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,000 pages](/experience/2023-paypal/).
 
 This post is about testing those components. Each test opens a component's story in Storybook and screenshots it: either the component itself or the whole story.
 
@@ -197,7 +197,7 @@ Trust in a visual test suite builds up over time: from a stable environment, fro
 
 We can see it in how failures behave now: a failing visual test step no longer turns green after a few reruns. If it fails, somebody has to go and look at it.
 
-**Look at the images.** A passing visual test proves the story matches the committed screenshot, not that the screenshot is right.
+**Look at the images.** A passing visual test proves the story matches the committed screenshot, not that the screenshot is right. It's the same lesson I took from [auditing docs with AI]({% post_url 2026-5-23-Pair_programming_with_ai_auditing_component_docs %}): the tool does the work, and a person still has to check it.
 
 ## What's Next
 
