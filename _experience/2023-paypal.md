@@ -23,7 +23,7 @@ One of my biggest achievements has been improving Core Web Vitals at scale throu
 - Delivered measurable Core Web Vitals improvements at scale, improving PayPal.com homepage LCP from 3.48s to 2.24s on desktop and from 4.24s to 2.29s on mobile.
 - Led the migration of Venmo.com from a static site to the shared component platform, defining the component strategy and migration approach end-to-end.
 - Built performance governance and release tooling, including a bundle size analyzer integrated into PR reviews and CI/CD workflows.
-- Drove test and release modernization by supporting the Jest to Vitest migration and helping stabilize E2E testing to reduce flaky reruns and shorten release cycles.
+- Drove test and release modernization by supporting the Jest to Vitest migration and helping stabilize E2E testing to reduce flaky reruns and shorten release cycles ([how we keep screenshot tests reliable]({% post_url 2026-11-12-Visual_testing_at_paypal %})).
 - Defined the tokenization strategy and built the theming foundation, including token library automation and multi-brand theme support.
 - Enabled major launches such as QuantumLeap, PayPal Everywhere, and Fastlane while maintaining backward compatibility and zero breaking changes.
 - Contributed hands-on to component development with a strong focus on accessibility, responsiveness, maintainability, and production quality.
