@@ -1,0 +1,12 @@
+---
+layout: single
+---
+
+{{ content }}
+
+{% unless page.cta == false %}
+<div class="notice--info">
+  <p><strong>Need a hand with your project?</strong> I help teams with frontend architecture, design systems, web performance, and full-stack development.</p>
+  <p><a href="{{ '/hire-me/' | relative_url }}">See how I can help &rarr;</a></p>
+</div>
+{% endunless %}

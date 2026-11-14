@@ -54,4 +54,4 @@ I’m hands-on, pragmatic, and comfortable working in complex environments where
 
 I’m open to interesting opportunities, consulting work, and challenging projects — especially around frontend platforms, design systems, performance, modernization, and full-stack architecture.
 
-Email me at [maxim.zhukov.dev@gmail.com](maxim.zhukov.dev@gmail.com) with a short note about your project, role, or idea.
+Email me at [maxim.zhukov.dev@gmail.com](mailto:maxim.zhukov.dev@gmail.com) with a short note about your project, role, or idea.

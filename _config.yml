@@ -105,7 +105,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: post-cta
       classes: wide
       author_profile: true
       read_time: true
