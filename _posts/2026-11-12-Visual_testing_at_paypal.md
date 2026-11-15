@@ -18,7 +18,7 @@ tags:
 
 ## The Problem With Visual Tests
 
-I work on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,000 pages](/experience/2023-paypal/).
+I work on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,500 pages](/experience/2023-paypal/).
 
 This post is about testing those components. Each test opens a component's story in Storybook and screenshots it: either the component itself or the whole story.
 
