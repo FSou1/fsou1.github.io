@@ -7,5 +7,5 @@ main:
     url: /projects/
   - title: "CV / Resume"
     url: "/assets/Maxim_Zhukov_Resume.pdf"
-  - title: "Hire Me 💻"
-    url: /hire-me
+  - title: "Contact"
+    url: /contact/

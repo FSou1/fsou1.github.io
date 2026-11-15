@@ -1,6 +1,8 @@
 ---
-permalink: /hire-me/
-title: "Hire Me"
+permalink: /contact/
+redirect_from:
+  - /hire-me/
+title: "Contact"
 classes: wide
 ---
 

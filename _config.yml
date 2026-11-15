@@ -56,6 +56,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 author:
   name: "Maxim Zhukov"
@@ -72,9 +73,9 @@ author:
     - label: "CV / Resume"
       icon: "fas fa-fw fa-file"
       url: "/assets/Maxim_Zhukov_Resume.pdf"
-    - label: "Hire Me"
+    - label: "Contact"
       icon: "fas fa-fw fa-link"
-      url: "/hire-me"
+      url: "/contact/"
 
 footer:
   links:
@@ -87,9 +88,9 @@ footer:
     - label: "CV / Resume"
       icon: "fas fa-fw fa-file"
       url: "/assets/Maxim_Zhukov_Resume.pdf"
-    - label: "Hire Me"
+    - label: "Contact"
       icon: "fas fa-fw fa-link"
-      url: "/hire-me"
+      url: "/contact/"
 
 collections:
   experience:
