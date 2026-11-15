@@ -3,6 +3,8 @@ title: "Earning Trust in Visual Tests"
 excerpt: "How we keep visual tests reliable for the React component library behind PayPal's and Venmo's logged-out pages."
 description: "How we keep visual tests reliable for the React component library behind PayPal's and Venmo's logged-out pages."
 date: 2026-11-12
+header:
+  og_image: /assets/images/posts/visual-testing-update-snapshots-flow.png
 categories:
   - visual-testing
 tags:
@@ -10,6 +12,9 @@ tags:
   - Visual Regression
   - CI
   - Design Systems
+  - React
+  - Storybook
+  - TypeScript
 ---
 
 **TL;DR:** We test our React components with about 3,400 screenshots of them rendered in Storybook, in four browsers and several brand themes. Four practices keep them trustworthy: screenshots are only ever generated in CI; fonts, images and videos are served from the repo; adding a visual test is becoming a one-line change; and CI runs as much of the suite as a change actually risks. Even with all of that, I found a set of screenshots this week that had been passing while showing a bug.
@@ -18,7 +23,7 @@ tags:
 
 ## The Problem With Visual Tests
 
-I work on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,500 pages](/experience/2023-paypal/).
+I'm a Staff Software Engineer at PayPal, working on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,500 pages](/experience/2023-paypal/).
 
 This post is about testing those components. Each test opens a component's story in Storybook and screenshots it: either the component itself or the whole story.
 
@@ -60,7 +65,9 @@ This makes regenerating screenshots as cheap as it gets, which is exactly the ha
 
 ## The CI Environment Matters as Much as the Tests
 
-Some of our pipelines used to run on Jenkins, and moving them to Harness (our CI/CD platform) gave us a significant boost in both execution time and the stability of the environment. On Jenkins, the visual tests for a single package took around 40 minutes. On Harness, the same tests run in around 10 minutes, and the whole monorepo, now 4 packages, finishes them in 20-25 minutes. That came from three things: a more stable environment, parallel jobs (each browser runs as its own job), and the option to give heavy steps more resources. Every run also starts in a fresh, pinned container, so one run can't leave state behind for the next.
+Our pipelines used to run on Jenkins. After the move to a monorepo, I took on the second step of the migration: I made the monorepo package-agnostic and replaced one large Jenkins configuration with a set of simple Harness pipelines (Harness is our CI/CD platform). Adding a new package now needs no pipeline changes at all.
+
+For visual tests, the new pipelines brought three things: a more stable environment, parallel jobs (each browser runs as its own job), and the option to give heavy steps more resources. Every run also starts in a fresh, pinned container, so one run can't leave state behind for the next.
 
 That stability is what made the rest possible. Practices like CI-only screenshots only work when the environment produces the same pixels every time. On an environment that's itself unreliable, every failure is a debate about whether the test or the machine is to blame.
 
@@ -98,7 +105,7 @@ await page.route(/\.(jpe?g|png|webp|avif|svg)/i, async (route) => {
 
 ![Aspect-ratio placeholders in a screenshot: images and video are replaced with fixed stand-ins](/assets/images/posts/visual-testing-placeholders.png)
 
-Engineers writing a test don't have to think about any of this. They import `test` from the shared fixture instead of from Playwright, and a lint rule blocks the direct import, so nobody can skip the interceptors by accident.
+Engineers writing a test don't have to think about any of this, so stable screenshots come for free to everyone on the team. They import `test` from the shared fixture instead of from Playwright, and a lint rule blocks the direct import, so nobody can skip the interceptors by accident.
 
 ## Adding a Visual Test Should Take One Line
 

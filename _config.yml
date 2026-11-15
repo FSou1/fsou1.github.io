@@ -18,7 +18,6 @@ masthead_title: " "
 email: maxim.zhukov.dev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 
-twitter_username: username
 github_username: fsou1
 minimal_mistakes_skin: default
 search: true
