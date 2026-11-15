@@ -37,19 +37,10 @@ As the lead software engineer on a team of 5, I had the pleasure of working on a
 
 ## Skills
 
-- Node.js, Node-API
-- React.js
-- JavaScript
-- Front-end Development
-- UI/UX Development
-- Software Architecture
-- Cloud Computing
-- GraphQL
-- Google Cloud Platform (GCP)
-- HTML5/CSS
-- ElectronJS
-- Moleculer.js
-- RxJS
-- Git
+- **Leadership:** Technical Leadership, Process Improvement, Client Communication
+- **Architecture:** Software Architecture, Plug-in Architecture, Microservices (Moleculer.js)
+- **Frontend & Desktop:** React, JavaScript, Electron, RxJS, HTML5 / CSS, UI/UX Development
+- **Backend:** Node.js, Node-API, GraphQL, Native C++ / Python Integration
+- **Cloud & Tooling:** Google Cloud Platform (GCP), Git
 
 \* contracted by [EPAM Systems](https://www.epam.com/) (an American company that specializes in software engineering services, digital platform engineering, and digital product design)

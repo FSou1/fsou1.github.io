@@ -38,14 +38,8 @@ Being able to work on such a grand project, driving and leading it, was an unfor
 
 ## Skills
 
-- .NET Core
-- ASP.NET Core
-- Microsoft SQL Server
-- RabbitMQ
-- REST API
-- OAuth
-- Solution Architecture
-- Microservice Architecture
-- API Development
-- Microservices
-- Databases
+- **Leadership:** Technical Leadership, Team Building (grew the team to 7)
+- **Architecture:** Solution Architecture, Microservice Architecture, Distributed Systems
+- **Backend:** .NET Core, ASP.NET Core, REST API, OAuth, Quartz.NET, Topshelf
+- **Messaging & Data:** RabbitMQ, MassTransit, Microsoft SQL Server
+- **Delivery:** TeamCity, PowerShell, Web Deploy

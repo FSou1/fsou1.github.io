@@ -31,18 +31,10 @@ This experience was particularly meaningful for me because it was my first time 
 
 ## Skills
 
-- .NET Core
-- TypeScript
-- Microsoft Azure
-- Solution Architecture
-- HTML5/CSS
-- User Experience (UX)
-- API Development
-- ASP.NET Web API
-- REST API
-- SQL Azure
-- OAuth
-- Databases
-- Front-end Development
+- **Architecture:** Solution Architecture, API Development
+- **Backend:** .NET Core, ASP.NET Web API, REST API, OAuth
+- **Frontend:** TypeScript, HTML5 / CSS, User Experience (UX), Bundle Size Optimization
+- **Cloud & Data:** Microsoft Azure, Azure SQL
+- **Quality:** Test-Driven Development (TDD), Continuous Integration, Code Reviews, Static Code Analysis
 
 \* contracted by [EPAM Systems](https://www.epam.com/) (an American company that specializes in software engineering services, digital platform engineering, and digital product design)

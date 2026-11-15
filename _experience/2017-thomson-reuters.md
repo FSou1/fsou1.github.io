@@ -39,19 +39,10 @@ At the Microsoft Connect Conference 2017, the project was introduced by Scott Gu
 
 ## Skills
 
-- .NET Core
-- Microsoft Azure
-- HTML5/CSS
-- JavaScript
-- Azure SQL
-- ESLint
-- Cloud-Native Applications
-- Microservices
-- Solution Architecture
-- API Development
-- REST API
-- OAuth
-- Databases
-- GraphQL
+- **Leadership:** Technical Leadership, Team Growth (8 → 20 engineers), Client Communication, Backlog & Risk Management
+- **Architecture:** Solution Architecture, Microservices, Cloud-Native Applications, Architecture Documentation
+- **Backend & APIs:** .NET Core, REST API, GraphQL, OAuth
+- **Cloud & Data:** Microsoft Azure, Azure SQL
+- **Frontend:** JavaScript, HTML5 / CSS, ESLint
 
 \* contracted by [EPAM Systems](https://www.epam.com/) (an American company that specializes in software engineering services, digital platform engineering, and digital product design)

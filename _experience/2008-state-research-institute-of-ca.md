@@ -22,12 +22,6 @@ Through my work on this project, I gained extensive knowledge in various areas s
 
 ## Skills
 
-- .NET
-- ASP.NET MVC
-- JavaScript
-- HTML/CSS
-- Microsoft SQL Server
-- REST API
-- User Experience (UX)
-- Front-end Development
-- Databases
+- **Backend:** .NET, ASP.NET MVC, REST API
+- **Frontend:** JavaScript, HTML / CSS, User Experience (UX)
+- **Data:** Microsoft SQL Server, Database Design

@@ -26,15 +26,9 @@ As a key developer on a small team of 8 engineers at Walmart, I designed and dev
 
 ## Skills
 
-- React.js
-- JavaScript
-- Node.js
-- Storybook
-- UI/UX Development
-- User Experience (UX)
-- HTML5/CSS
-- Git
-- TypeScript
-- Front-end Development
+- **Frontend:** React, TypeScript, JavaScript, Node.js, HTML5 / CSS
+- **Design Systems:** Component Libraries, Storybook, UI/UX Development
+- **Accessibility:** WCAG AA, axe-core, Static Analysis
+- **Quality:** E2E Testing, JavaScript to TypeScript Migration, Git
 
 \* contracted by [EPAM Systems](https://www.epam.com/) (an American company that specializes in software engineering services, digital platform engineering, and digital product design)

@@ -28,15 +28,8 @@ I owe a lot to the IT department and my colleagues for helping me become a bette
 
 ## Skills
 
-- .NET Core
-- ASP.NET Web API
-- JavaScript
-- Node.js
-- HTML5/CSS
-- RabbitMQ
-- Microsoft SQL Server
-- Microservice Architecture
-- API Development
-- Software Architecture
-- Front-end Development
-- Databases
+- **Architecture:** Software Architecture, Microservice Architecture, System Integration
+- **Backend:** .NET Core, ASP.NET Web API, Node.js, API Development
+- **Messaging & Data:** RabbitMQ, Microsoft SQL Server
+- **Frontend:** JavaScript, HTML5 / CSS
+- **Domain:** Business Process Automation, Document Workflow, Banking System Integration
