@@ -3,50 +3,38 @@ title: "2023 - Now, PayPal"
 order: 8
 sidebar:
   - title: "Role"
-    text: "Staff Software Engineer"
+    text: "Staff Software Engineer (Frontend Architect)"
   - title: "Tech stack"
-    text: "React, Storybook, Node.js"
+    text: "React, TypeScript, Storybook, Node.js, Turborepo"
   - title: "Location"
-    text: "Remote"
+    text: "Houston, TX"
   - title: "Website"
     text: "[https://www.paypal.com/](https://www.paypal.com/)"
 ---
 
-As a Staff Software Engineer / Frontend Architect at PayPal, I lead the architecture and development of a cross-org React component platform that powers every page of PayPal.com and Venmo.com. Working with a team of 11 engineers, I help define the technical vision, guide architectural decisions, and drive delivery across a large, business-critical frontend platform.
+As a Staff Software Engineer / Frontend Architect at PayPal, I am a core technical contributor and tech lead on the PPCOM team (11 engineers). We own the React component platform that powers PayPal.com and Venmo.com: more than 6,500 pages and 4.8M daily views. I lead the architecture design, standards, and technical direction for the foundations that all component work builds on.
 
-One of my biggest achievements has been improving Core Web Vitals at scale through component redesign, rendering optimizations, and controlled rollouts on high-traffic pages. I also led the Venmo.com migration to the component platform, built internal tooling to improve release velocity and performance governance, and created the tokenization and theming foundation that now supports faster multi-brand launches. It has been a great opportunity to work on platform engineering at scale while partnering closely with product, design, and engineering teams across the organization.
+My biggest achievements include improving PayPal.com homepage LCP by 36% on desktop and 46% on mobile, migrating Venmo.com from a static site to the component platform end-to-end, and building the tokenization and multi-brand theming foundation behind the Oslo rebrand. I also re-architected the component library's CI/CD into a package-agnostic monorepo pipeline, and I am now driving AI tooling adoption across the platform to shorten the release cycle.
 
 ## My contribution
 
-- Led the frontend architecture and delivery of a cross-org React component platform powering every page of PayPal.com and Venmo.com.
-- Served as tech lead for the component team, helping drive roadmap, architecture reviews, and cross-org technical alignment.
-- Delivered measurable Core Web Vitals improvements at scale, improving PayPal.com homepage LCP from 3.48s to 2.24s on desktop and from 4.24s to 2.29s on mobile.
-- Led the migration of Venmo.com from a static site to the shared component platform, defining the component strategy and migration approach end-to-end.
-- Built performance governance and release tooling, including a bundle size analyzer integrated into PR reviews and CI/CD workflows.
-- Drove test and release modernization by supporting the Jest to Vitest migration and helping stabilize E2E testing to reduce flaky reruns and shorten release cycles ([how we keep visual tests reliable]({% post_url 2026-11-12-Visual_testing_at_paypal %})).
-- Defined the tokenization strategy and built the theming foundation, including token library automation and multi-brand theme support.
-- Enabled major launches such as QuantumLeap, PayPal Everywhere, and Fastlane while maintaining backward compatibility and zero breaking changes.
+- Lead the architecture design, standards, and technical direction for the React component platform powering PayPal.com and Venmo.com (6,500+ pages, 4.8M daily views), as tech lead on the PPCOM team of 11 engineers.
+- Improved PayPal.com homepage LCP by 36% on desktop (3.48s → 2.24s) and 46% on mobile (4.24s → 2.29s) through a component platform redesign and rendering optimizations, shipped via controlled rollouts with zero incidents and full backward compatibility.
+- Led the Venmo.com migration from a static site to the component platform end-to-end: migrated all public marketing and legal pages (260+), cut page development from days to hours, and delivered six-figure annual savings by retiring Contentful, while enabling A/B testing and no-code launches.
+- Built the tokenization and multi-brand theming foundation: a Tokens Studio → Style Dictionary pipeline with CI/release automation that cut theme foundation work from weeks to days and enabled QuantumLeap, PayPal Everywhere, Fastlane, and the Oslo rebrand (5,000+ pages, 201 markets) with zero breaking changes.
+- Re-architected the component library's CI/CD, moving off a monolithic Jenkins pipeline to a package-agnostic monorepo on a Turbo-driven Harness pipeline that scales build, test, and release across every package, so adding a new package requires zero pipeline changes.
+- Made visual regression testing trustworthy at scale: about 3,400 Playwright screenshots of Storybook stories across four browsers and multiple brand themes, generated only in CI with fonts and media served from the repo, so a failure means something actually changed ([how we keep visual tests reliable]({% post_url 2026-11-12-Visual_testing_at_paypal %})).
+- Designed a multi-library architecture on that monorepo, letting teams ship short-lived, experimental marketing experiences in isolated libraries that protect page performance and retire without leaving debt in the core design system.
+- Driving AI tooling adoption across the platform: Storybook MCP for automated release sanity checks, AI-assisted design-to-code workflows replacing static Figma handoffs, and custom Claude skills for developer environment workflows, to shorten the release cycle and speed up component delivery.
+- Built performance governance and release tooling, including a bundle size analyzer integrated into PR reviews and CI/CD workflows, and supported the Jest to Vitest migration.
 - Contributed hands-on to component development with a strong focus on accessibility, responsiveness, maintainability, and production quality.
-- Currently driving site-wide media optimization experiments through the component platform to improve load performance and reduce asset weight at scale.
 
 ## Skills
 
-- React
-- TypeScript / JavaScript
-- Frontend Architecture
-- Design Systems
-- Component Libraries
-- Web Performance
-- Core Web Vitals
-- Accessibility (WCAG / ARIA)
-- Storybook
-- Node.js
-- CI/CD
-- Testing Strategy
-- Vitest / Jest
-- E2E Testing
-- Design Tokens
-- Theming
-- LESS / CSS
-- Performance Optimization
-- Cross-team Technical Leadership
+- **Leadership:** Technical Leadership, Frontend Architecture, Architecture Reviews, Cross-team Alignment
+- **Frontend:** React, TypeScript, JavaScript, Node.js, CSS / LESS
+- **Design Systems:** Component Libraries, Storybook, Design Tokens (Tokens Studio, Style Dictionary), Multi-brand Theming, Accessibility (WCAG / ARIA)
+- **Performance:** Core Web Vitals, Rendering Optimization, Bundle Size Governance
+- **Platform & Delivery:** Monorepos (Turborepo), CI/CD (Harness, Jenkins), Release Automation, Large-scale Migrations
+- **Quality:** Testing Strategy, Visual Regression (Playwright), E2E Testing, Vitest / Jest
+- **AI Engineering:** AI-assisted Development, MCP, Claude Code Skills, Design-to-Code Workflows
