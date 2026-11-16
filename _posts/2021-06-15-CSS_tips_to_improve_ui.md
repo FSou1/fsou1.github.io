@@ -18,3 +18,6 @@ p.s. The "50 UI Tips" book is available [here](https://www.producthunt.com/posts
 Source code and references:
 
 - [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/html/50-ui-tips)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

@@ -12,3 +12,6 @@ One of the best things about Keywords Highlighter is how fast it works. The exte
 So whether you're looking for a faster way to find information online or just want to streamline your browsing experience, I believe this is a great tool to help you do it.
 
 p.s. Any feedback, bug reports, and feature requests are always welcome! Feel free to submit them on the project's [GitHub repository](https://github.com/FSou1/Keywords-Highlighter).
+
+
+Read more about the project on the [Keywords Highlighter project page](/projects/keywords-highlighter/).

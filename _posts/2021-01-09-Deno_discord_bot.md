@@ -14,3 +14,8 @@ I hope you enjoy this video.
 Source code and references:
 
 - [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/discord/moderator)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*
+
+These days I also run a Node.js bot that posts daily deals to my [Board Game Deals Discord server](/projects/board-game-deals/).

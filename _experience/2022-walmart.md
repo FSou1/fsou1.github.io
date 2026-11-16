@@ -31,4 +31,9 @@ As a key developer on a small team of 8 engineers at Walmart, I designed and dev
 - **Accessibility:** WCAG AA, axe-core, Static Analysis
 - **Quality:** E2E Testing, JavaScript to TypeScript Migration, Git
 
+## Related posts
+
+- [TypeScript types cheat sheet]({% post_url 2020-02-06-TypeScript_types_cheat_sheet %})
+- [How to import CSS and style TSX React components]({% post_url 2021-07-13-Style_react_components %})
+
 \* contracted by [EPAM Systems](https://www.epam.com/) (an American company that specializes in software engineering services, digital platform engineering, and digital product design)

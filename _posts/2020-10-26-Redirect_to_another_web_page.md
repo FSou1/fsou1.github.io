@@ -41,3 +41,6 @@ Source code and references:
 - [301 & 302 redirect examples](https://github.com/FSou1/SeasonedDeveloper/tree/main/other/redirect-to-a-page)
 - [How to Redirect a Web Page](https://css-tricks.com/redirect-web-page/)
 - [http-equiv="refresh"](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-refresh)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

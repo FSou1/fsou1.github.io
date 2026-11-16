@@ -10,3 +10,6 @@ How to setup environment variables for your Deno project using the dotenv packag
 ## Links from the video
 
 - https://deno.land/x/dotenv@v3.1.0
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

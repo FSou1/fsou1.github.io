@@ -10,3 +10,6 @@ Hey guys. If you think it is fun to code together (not only watching a video but
 Programming Challenge «Your order, please»: [https://www.codewars.com/kata/523f5d21c841566fde000009](https://www.codewars.com/kata/523f5d21c841566fde000009)
 
 Source code: [https://gist.github.com/FSou1/5926b75b813deb87c894c23997ba51c8](https://gist.github.com/FSou1/5926b75b813deb87c894c23997ba51c8)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

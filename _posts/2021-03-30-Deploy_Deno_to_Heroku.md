@@ -116,3 +116,6 @@ Resources:
 - [Source code](https://github.com/FSou1/deploy-deno-to-heroku)
 - [How To Deploy a Deno App to Heroku (Youtube)](https://youtu.be/jC8gOkVQxdg)
 - [Deploy your deno apps to heroku](https://dev.to/ms314006/deploy-your-deno-apps-to-heroku-375h)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

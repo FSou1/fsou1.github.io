@@ -39,6 +39,8 @@ In addition to Discord, the integration also includes posting to the [tabletopga
 
 ![image-left](/assets/images/projects/board-game-deals-reddit.png)
 
+If you'd like to build a Discord bot yourself, I walked through one step by step in [Let's develop a Discord bot using Deno]({% post_url 2021-01-09-Deno_discord_bot %}).
+
 ## Skills
 
 - Node.js

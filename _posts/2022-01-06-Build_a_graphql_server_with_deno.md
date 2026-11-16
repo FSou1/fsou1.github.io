@@ -16,3 +16,6 @@ Build a GraphQL Server with Deno and MongoDB Atlas tutorial. Learn how to setup 
 - https://deno.land/x/gql@1.1.0
 - https://deno.land/x/mongo@v0.29.0
 - https://www.mongodb.com/atlas/database
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

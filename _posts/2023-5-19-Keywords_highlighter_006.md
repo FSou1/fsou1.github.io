@@ -20,3 +20,6 @@ To install Keywords Highlighter v0.0.6, simply visit the Chrome Web Store throug
 For those interested in contributing or exploring the inner workings of Keywords Highlighter, the project's GitHub repository is available here: [Keywords Highlighter GitHub](https://github.com/FSou1/Keywords-Highlighter). Feel free to dive into the code, submit bug reports, or even contribute to the development!
 
 Thank you for your continued support and feedback. I hope that Keywords Highlighter v0.0.6 brings even more convenience and efficiency to your web browsing.
+
+
+Read more about the project on the [Keywords Highlighter project page](/projects/keywords-highlighter/).

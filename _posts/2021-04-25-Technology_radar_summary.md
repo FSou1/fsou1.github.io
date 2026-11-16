@@ -33,6 +33,6 @@ A lot of things related to Data solutions are omitted in this summary since they
 
 Let me know if you think I missed something you consider as a breakthrough in the comments. It will be interesting for me to read your thoughts on it.
 
-Source: [https://t.me/seasoneddev](https://t.me/seasoneddev)
+Source: my [SeasonedDev](/projects/seasoned-dev/) Telegram channel, [t.me/seasoneddev](https://t.me/seasoneddev)
 
 Stay safe!

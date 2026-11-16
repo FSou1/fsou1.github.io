@@ -14,3 +14,6 @@ Since you may not be familiar with the approach, do not hesitate to post any com
 Source code and references:
 
 - [Source code](https://github.com/FSou1/SeasonedDeveloper/tree/main/typescript/deno/telegram/shibes-as-a-service)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

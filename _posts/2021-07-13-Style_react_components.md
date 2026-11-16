@@ -98,3 +98,6 @@ References:
 - [Configuration section](https://gist.github.com/FSou1/f06358d286bcc89fa79e93fc4169a05a)
 - [How to use CSS Modules with TypeScript and webpack](https://medium.com/@sapegin/css-modules-with-typescript-and-webpack-6b221ebe5f10)
 - [dts-css-modules-loader npm package](https://github.com/Megaputer/dts-css-modules-loader)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

@@ -10,3 +10,6 @@ Hey folks, if you have practiced code kata then you know how fun and challenging
 Programming Challenge «Your order, please»: [https://www.codewars.com/kata/55c45be3b2079eccff00010f](https://www.codewars.com/kata/55c45be3b2079eccff00010f)
 
 Source code: [https://gist.github.com/FSou1/df6459a34eed280c09c907be4a39dc89](https://gist.github.com/FSou1/df6459a34eed280c09c907be4a39dc89)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*

@@ -10,3 +10,6 @@ Hey folks, here is another solving code kata video. I hope you enjoy.
 Programming Challenge «Your order, please»: [https://www.codewars.com/kata/5277c8a221e209d3f6000b56](https://www.codewars.com/kata/5277c8a221e209d3f6000b56)
 
 Source code: [https://gist.github.com/FSou1/e6bb26e68de3b966c241cd7a2df66e7c](https://gist.github.com/FSou1/e6bb26e68de3b966c241cd7a2df66e7c)
+
+
+*This post is part of my [SeasonedDev](/projects/seasoned-dev/) YouTube channel.*
