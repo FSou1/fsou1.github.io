@@ -22,6 +22,18 @@ github_username: fsou1
 minimal_mistakes_skin: default
 search: true
 logo: /assets/images/logo.png
+repository: "FSou1/fsou1.github.io"
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: "MDEwOlJlcG9zaXRvcnk1ODg1Mjc2MQ=="
+    category_name: "Announcements"
+    category_id: "DIC_kwDOA4IFmc4DLRQt"
+    discussion_term: "pathname"
+    reactions_enabled: "1"
+    input_position: "top"
+    theme: "light"
+    lazy: true
 
 # Build settings
 markdown: kramdown
@@ -110,7 +122,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
       show_date: true
   # _pages
