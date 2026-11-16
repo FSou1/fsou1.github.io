@@ -25,15 +25,15 @@ tags:
 
 I'm a Staff Software Engineer at PayPal, working on a monorepo of React component libraries. They provide the sections and components behind every logged-out page of paypal.com and venmo.com, [more than 6,500 pages](/experience/2023-paypal/).
 
-This post is about testing those components. Each test opens a component's story in Storybook and screenshots it: either the component itself or the whole story.
+This post is about testing those components. Each test opens a component's story in Storybook and screenshots either the component itself or the whole story.
 
-Visual tests are the cheapest way to catch the bugs unit tests miss: a padding change that shifts a whole section, a font that silently falls back to Arial, a theme token that turns a button the wrong shade of blue.
+Unit tests don't notice when a padding change shifts a whole section, when a font quietly falls back to Arial, or when a theme token turns a button the wrong shade of blue. A screenshot does, and it's cheap to take.
 
 They are most valuable when a change is not supposed to change anything visible. Upgrading dependencies, moving to a new Storybook version or swapping the build toolchain should leave every component looking exactly the same. Without visual tests, confirming that means clicking through hundreds of stories by hand. With them, you get the full list of components that look different, in every browser and theme, before the change is merged.
 
 That only works if people believe the results. Visual test suites usually lose that trust in two ways.
 
-**Noise.** The test fails, but the code change had nothing to do with it. The difference is real in the image, but it comes from the test run itself: the web font hadn't finished loading, so the text was captured in a fallback font; an animation was caught mid-frame; a scroll-triggered entrance hadn't started yet. After a few false alarms like these, people stop investigating failures and simply regenerate the screenshots to get a green pipeline.
+**Noise.** The test fails, but the code change had nothing to do with it. The difference is real in the image, but it comes from the test run itself. Maybe the web font hadn't finished loading and the text was captured in a fallback font, or an animation was caught mid-frame, or a scroll-triggered entrance hadn't started yet. After a few false alarms like these, people stop investigating failures and simply regenerate the screenshots to get a green pipeline.
 
 The wrong screenshot is now committed and lives in the repo. Later, when someone ships the correct behavior, the test fails against it, and the correct change is the one that looks broken.
 
@@ -59,15 +59,15 @@ Why this matters:
 
 - **Drift goes away.** The environment that creates a screenshot is the same one that checks it, so there is nothing to drift between.
 - **A visual change becomes a reviewable step.** The updated screenshots land in the PR diff, GitHub shows the before and after side by side, and the commit says who asked for it.
-- **Fixing a failing PR no longer takes an afternoon.** Before, updating screenshots meant launching Rancher Desktop (a local Docker runtime), starting a container, starting Storybook inside it and running the update by hand. You had to check out the branch locally, so when several PRs were failing, someone went through them one by one, checking out other people's branches. Now anyone can drop the comment on any PR and move on while the pipeline works.
+- **It saves a lot of time.** To update screenshots by hand, you had to check out the branch, launch Rancher Desktop (a local Docker runtime), start a container, run Storybook inside it and run the update. When several PRs were failing, someone had to go through them one by one, checking out other people's branches. Now it's one comment per PR, and the pipeline does the rest.
 
 This makes regenerating screenshots as cheap as it gets, which is exactly the habit I warned about above. It's safe only because the result is not a silent fix: the new screenshots are a diff in the PR, and a reviewer has to approve it.
 
 ## The CI Environment Matters as Much as the Tests
 
-Our pipelines used to run on Jenkins. After the move to a monorepo, I took on the second step of the migration: I made the monorepo package-agnostic and replaced one large Jenkins configuration with a set of simple Harness pipelines (Harness is our CI/CD platform). Adding a new package now needs no pipeline changes at all.
+Our pipelines used to run on Jenkins. After the move to a monorepo, I took on the second step of the migration. I made the monorepo package-agnostic and replaced one large Jenkins configuration with a set of simple Harness pipelines (Harness is our CI/CD platform). Adding a new package now needs no pipeline changes at all.
 
-For visual tests, the new pipelines brought three things: a more stable environment, parallel jobs (each browser runs as its own job), and the option to give heavy steps more resources. Every run also starts in a fresh, pinned container, so one run can't leave state behind for the next.
+For visual tests, the new pipelines gave us a more stable environment, parallel jobs (each browser runs as its own job), and the option to give heavy steps more resources. Every run also starts in a fresh, pinned container, so one run can't leave state behind for the next.
 
 That stability is what made the rest possible. Practices like CI-only screenshots only work when the environment produces the same pixels every time. On an environment that's itself unreliable, every failure is a debate about whether the test or the machine is to blame.
 
@@ -75,7 +75,7 @@ That stability is what made the rest possible. Practices like CI-only screenshot
 
 ## Control Everything a Screenshot Depends On
 
-A screenshot depends on more than your code. Images, web fonts and videos all come from PayPal's CDN. These assets rarely change. The real problem is that they don't load consistently: a request is slow or drops, and Playwright's "network idle" signal doesn't reliably wait for it. The result was the worst kind of flakiness: the same PR fails twice and goes green on the third run.
+A screenshot depends on more than your code. Images, web fonts and videos all come from PayPal's CDN. These assets rarely change. The real problem is that they don't load consistently: a request is slow or drops, and Playwright's "network idle" signal doesn't reliably wait for it. The result was the worst kind of flakiness, where the same PR fails twice and goes green on the third run.
 
 So every test runs through a shared Playwright fixture that intercepts those requests and answers the ones it recognizes with files checked into the repo:
 
@@ -109,7 +109,7 @@ Engineers writing a test don't have to think about any of this, so stable screen
 
 ## Adding a Visual Test Should Take One Line
 
-Today, most of our components have a hand-written spec: a list of stories, a list of themes, wait for the container, scroll, take the screenshot. It works, but it means 56 spec files, and coverage depends on someone remembering to write the next one.
+Today, most of our components have a hand-written spec that lists its stories and themes, waits for the container, scrolls and takes the screenshot. It works, but it means 56 spec files, and coverage depends on someone remembering to write the next one.
 
 We're currently trying a different approach, where a visual test is a Storybook tag:
 
@@ -163,13 +163,13 @@ There is also one small safety check. Playwright only works with the exact brows
 
 ## When a Green Test Was Wrong
 
-This week I was adding visual tests for a new section component. The tests were green. When I opened the screenshots, everything below the first screen had empty image frames: the right layout, the right boxes, and no images inside them.
+This week I was adding visual tests for a new section component. The tests were green. When I opened the screenshots, the layout below the first screen was correct, but every image frame there was empty.
 
 ![Before and after: empty image frames below the fold](/assets/images/posts/visual-testing-lazy-images-before-after.png)
 
-The cause: a full-page screenshot includes the whole story, top to bottom, but the browser only loads lazy images once they get close to the viewport. Our images are lazy in two ways: native `loading="lazy"`, and a wrapper component that doesn't render the image at all until it scrolls into view. Our "wait for images" helper waited for every image on the page to finish loading, but images that hadn't been rendered yet weren't on the page to wait for.
+The cause was lazy loading. A full-page screenshot includes the whole story, top to bottom, but the browser only loads lazy images once they get close to the viewport. Our images are lazy in two ways: native `loading="lazy"`, and a wrapper component that doesn't render the image at all until it scrolls into view. Our "wait for images" helper waited for every image on the page to finish loading, but images that hadn't been rendered yet weren't on the page to wait for.
 
-The fix: before waiting, the helper now scrolls through the page one screen at a time so the lazy wrappers render, switches native lazy images to eager, and only then waits for the network and the images:
+To fix it, the helper now scrolls through the page one screen at a time so the lazy wrappers render, switches native lazy images to eager, and only then waits for the network and the images.
 
 ```ts
 await page.evaluate(async () => {
@@ -200,11 +200,11 @@ The test was doing exactly what it was told. It compared the story against the c
 
 ## Takeaways
 
-Trust in a visual test suite builds up over time: from a stable environment, from cutting the noise to a minimum, and from people actually looking at the screenshots. Once it's there, a visual test failure stops being a checkbox to clear and becomes the first place we look when a component library change goes wrong.
+Trust in a visual test suite builds up over time. It comes from a stable environment, from cutting the noise to a minimum, and from people actually looking at the screenshots. Once it's there, a visual test failure stops being a checkbox to clear and becomes the first place we look when a component library change goes wrong.
 
-We can see it in how failures behave now: a failing visual test step no longer turns green after a few reruns. If it fails, somebody has to go and look at it.
+We can see it in how failures behave now. A failing visual test step no longer turns green after a few reruns. If it fails, somebody has to go and look at it.
 
-**Look at the images.** A passing visual test proves the story matches the committed screenshot, not that the screenshot is right. It's the same lesson I took from [auditing docs with AI]({% post_url 2026-5-23-Pair_programming_with_ai_auditing_component_docs %}): the tool does the work, and a person still has to check it.
+**Look at the images.** A passing visual test proves the story matches the committed screenshot, not that the screenshot is right. It's the same lesson I took from [auditing docs with AI]({% post_url 2026-5-23-Pair_programming_with_ai_auditing_component_docs %}). The tool does the work, and a person still has to check it.
 
 ## What's Next
 
