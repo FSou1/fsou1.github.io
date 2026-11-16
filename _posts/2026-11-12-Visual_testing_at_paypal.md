@@ -4,7 +4,7 @@ excerpt: "How we keep visual tests reliable for the React component library behi
 description: "How we keep visual tests reliable for the React component library behind PayPal's and Venmo's logged-out pages."
 date: 2026-11-12
 header:
-  og_image: /assets/images/posts/visual-testing-update-snapshots-flow.png
+  og_image: /assets/images/posts/visual-testing-og.png
 categories:
   - visual-testing
 tags:
