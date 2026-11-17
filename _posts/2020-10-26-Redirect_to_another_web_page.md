@@ -1,6 +1,7 @@
 ---
 title: Redirect to Another Web Page
 tags: JavaScript HTML HowTo
+description: "The three ways to redirect to another web page, starting with the HTML meta tag, with the pros and pitfalls of each."
 ---
 
 When I was thinking about this post, I thought it would be very short and straightforward. However, it looks like there are at least 3 different ways with pros and significant pitfalls.

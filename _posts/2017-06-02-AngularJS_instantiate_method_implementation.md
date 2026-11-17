@@ -2,6 +2,7 @@
 title: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs
 tags: AngularJS JavaScript
 redirect_from: "/AngularJS_instantiate_method_implementation/"
+locale: ru-RU
 ---
 
 Задумывались ли вы когда-нибудь, как создаются экземпляры используемых вами типов angularJS? Контроллеры, фабрики, сервисы, декораторы, значения- буквально каждый из них в конце концов передаётся на исполнение в функцию [instantiate](https://github.com/angular/angular.js/blob/master/src/auto/injector.js#L906) класса $injector, где их поджидает довольно занимательная конструкция, о которой сегодня и хотелось бы поговорить.

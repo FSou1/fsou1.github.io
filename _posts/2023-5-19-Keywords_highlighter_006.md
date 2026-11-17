@@ -1,6 +1,7 @@
 ---
 title: Introducing Keywords Highlighter v0.0.6- Enhanced Customization and Unlimited Rules
 tags: JavaScript React Project Chrome
+description: "Keywords Highlighter v0.0.6 adds unlimited rules and keywords, customizable CSS styles, and whole or partial match highlighting."
 ---
 
 I am excited to announce the release of [Keywords Highlighter](https://chrome.google.com/webstore/detail/keywords-highlighter/lmaonnpepldfnbkbmhkkficpmjdlojnn) version 0.0.6, an update to my Chrome extension! This version brings new features and improvements that will enhance your browsing experience. Let's explore what's new:

@@ -2,6 +2,7 @@
 title: Разворачиваем ASP.NET приложения и windows сервисы с использованием TeamCity
 tags: ASP.NET TeamCity CI/CD
 redirect_from: "/Build_and_deploy_net_with_teamcity/"
+locale: ru-RU
 ---
 
 В сегодняшней небольшой заметке хотел бы поделиться информацией о том, как корректно настроить Build step’ы в TeamCity для реализации auto deploy разработанных приложений на remote сервер.

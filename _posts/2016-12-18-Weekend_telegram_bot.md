@@ -2,6 +2,7 @@
 title: Субботний бот для Телеграма
 tags: .NET C# Telegram
 redirect_from: "/Weekend_telegram_bot/"
+locale: ru-RU
 ---
 
 Для автоматизации своих ежедневных нужд (кого я обманываю,- because i can) за субботу мною был написан небольшой телеграмовский бот [@FTrainBot](https://telegram.me/ftrainbot). О том, что для этого нужно, и будет эта заметка ([GitHub](https://github.com/FSou1/FTrainBot)).

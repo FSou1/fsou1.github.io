@@ -2,6 +2,7 @@
 title: Доступные сигнатуры метода Main и что выбрать
 tags: .NET C#
 redirect_from: "/C_sharp_entry_point/"
+locale: ru-RU
 ---
 
 Опираясь на исходный код метода [HasEntryPointSignature](https://github.com/dotnet/roslyn/blob/3bbb684a43a0af9d1261866272274a19f4de6976/src/Compilers/CSharp/Portable/Compilation/CSharpCompilation.cs#L1637), который используется компилятором для нахождения точки входа в наше приложение, можно смело заключить, что:

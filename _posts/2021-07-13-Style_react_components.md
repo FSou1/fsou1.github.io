@@ -1,6 +1,7 @@
 ---
 title: How to import CSS and style TSX React components
 tags: React TypeScript Tips
+description: "How to import CSS into TSX React components so class names stay consistent and a removed class name becomes a compilation error."
 ---
 
 In this video I'll show you how to make your React application more reliable. Your components and class names will always be consistent. And the next time, when you remove the class name so that it no longer exists, you will get a compilation error.

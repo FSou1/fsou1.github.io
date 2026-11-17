@@ -1,6 +1,7 @@
 ---
 title: find-focused-element package is available
 tags: TypeScript npm
+description: "A short post about find-focused-element, an npm package I published, with a Stackblitz sample and the source code on GitHub."
 ---
 
 It's a short post about a new npm package I've just uploaded.

@@ -1,6 +1,7 @@
 ---
 title: How to Solve «Valid Braces» Code Kata
 tags: CodeWars
+description: "A video walkthrough of solving the Codewars kata «Valid Braces», with a link to the source code."
 ---
 
 Hey folks, here is another solving code kata video. I hope you enjoy.

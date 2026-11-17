@@ -2,6 +2,7 @@
 title: Class, extends and super in JavaScript
 tags: JavaScript
 redirect_from: "/Classes_in_javascript/"
+description: "A quick note on JavaScript classes from ECMAScript 2015: declaring a class, inheriting with extends, and calling the parent with super."
 ---
 
 Classes were introduced to JavaScript in ECMAScript 2015. Even though it was about 5 years ago, I still want to drop a quick note about this feature.

@@ -2,6 +2,7 @@
 title: SignalR Core- how to start creating a currency broadcaster sample
 tags: .NET SignalR Core
 redirect_from: "/SignalR_core_how_to/"
+description: "A step-by-step sample that builds a currency rate broadcaster with SignalR Core (Microsoft.AspNetCore.SignalR) on ASP.NET Core."
 ---
 
 Today I'd like to take a look at a new version of SignalR package (to be honest, it's official name is `Microsoft.AspNetCore.Signalr`) and implement a currency broadcaster sample.

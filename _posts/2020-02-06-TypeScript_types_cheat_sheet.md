@@ -2,6 +2,7 @@
 title: TypeScript types cheat sheet
 tags: TypeScript
 redirect_from: "/TypeScript_types_cheat_sheet/"
+description: "A cheat sheet of the available TypeScript types, with examples of their usual use and the JavaScript output for each."
 ---
 
 This post is a collection of the available TypeScript types, examples of their usual use, and JavaScript outputs.

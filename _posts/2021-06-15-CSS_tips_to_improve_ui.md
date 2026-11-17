@@ -1,6 +1,7 @@
 ---
 title: 10 Excellent Tips to Improve Your UI
 tags: HTML CSS Tips
+description: "A video with 10 practical HTML and CSS tips for improving your UI."
 ---
 
 Hi guys, great to see you again!

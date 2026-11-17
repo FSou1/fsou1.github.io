@@ -2,6 +2,7 @@
 title: Angular 8 - Role-based authorization tutorial
 tags: Angular8 TypeScript
 redirect_from: "/Angular_8_role_based_authorization/"
+description: "A tutorial on implementing role-based authorization and access control on the front end with Angular 8, with a Stackblitz sample and source code."
 ---
 
 In this post, I'd like to show you an example of how you can implement role-based authorization/access control front end using Angular 8.

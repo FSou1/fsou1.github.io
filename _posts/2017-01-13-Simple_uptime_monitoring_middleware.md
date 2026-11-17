@@ -2,6 +2,7 @@
 title: Простейшее расширение для перехвата запроса в owin pipeline
 tags: .NET Middleware
 redirect_from: "/Simple_uptime_monitoring_middleware/"
+locale: ru-RU
 ---
 
 В сегодняшней небольшой заметке хотел бы поделиться очень простым расширением, которое, например, можно использовать для отслеживания uptime приложения (так же доступно на [github gist](https://gist.github.com/FSou1/c6f61a9c0591e0ff59826b92485c2d95)).

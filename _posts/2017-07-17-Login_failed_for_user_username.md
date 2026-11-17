@@ -2,6 +2,7 @@
 title: Login failed for user - когда все решения уже перепробованы
 tags: MSSQL
 redirect_from: "/Login_failed_for_user_username/"
+locale: ru-RU
 ---
 
 Если предоставляя доступ к Microsoft SQL Server новому пользователю вы перепробовали уже всевозможные решения, а в ответ продолжаете получать одну и ту же ошибку "Login failed fo user 'username' (Error: 18456)" то знайте, что вы не одиноки. И есть ещё кое-что, что вы могли забыть.

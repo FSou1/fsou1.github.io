@@ -36,7 +36,7 @@ Overall, I am proud of what I have achieved with SeasonedDev, and I am committed
 
 - [3 Ways to Solve «Your order, please» Code Kata]({% post_url 2020-09-30-3_ways_to_solve_your_order_please %})
 - [How to Solve «Valid Braces» Code Kata]({% post_url 2020-10-05-How_to_solve_valid_braces %})
-- [Code Together «Array Diff» Code Kata]({% post_url 2020-10-08-Code_together_array_diff copy %})
+- [Code Together «Array Diff» Code Kata]({% post_url 2020-10-08-Code_together_array_diff %})
 
 **JavaScript, HTML and CSS**
 
@@ -51,7 +51,7 @@ Overall, I am proud of what I have achieved with SeasonedDev, and I am committed
 - [Let's develop a Discord bot using Deno]({% post_url 2021-01-09-Deno_discord_bot %})
 - [Let's Deploy a Deno App to Heroku]({% post_url 2021-03-30-Deploy_Deno_to_Heroku %})
 - [Build a GraphQL Server with Deno]({% post_url 2022-01-06-Build_a_graphql_server_with_deno %})
-- [Setup environment variables with Deno using dotenv]({% post_url 2022-01-08-Setup_environment_variables_with_Deno_using_dotenv copy %})
+- [Setup environment variables with Deno using dotenv]({% post_url 2022-01-08-Setup_environment_variables_with_Deno_using_dotenv %})
 - [What happens when you don't release allocated resources]({% post_url 2022-01-15-Resource_allocation_mistake %})
 
 **Node.js**

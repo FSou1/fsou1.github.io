@@ -2,6 +2,7 @@
 title: IIS Process Failure - 502.5 request pipeline
 tags: ASP.NET Core IIS
 redirect_from: "/IIS_process_failure/"
+locale: ru-RU
 ---
 
 С выходом ASP.NET Core 2.0 становится понятно, что новая платформа всё прочнее входит в наши реалии разработки, а значит пора начинать с ней знакомиться. Но начать мне бы хотелось не с разработки традиционных Hello world приложений и успешных сценариев, а наоборот, с отказа. И так уж случилось, что эта заметка станет в большей степени некоторым research'ем поведения IIS'а и лишь вскользь затронет [AspNetCoreModule](https://github.com/aspnet/AspNetCoreModule).

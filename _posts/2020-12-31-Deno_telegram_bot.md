@@ -1,6 +1,7 @@
 ---
 title: Let's code a Telegram bot using Deno
 tags: Deno Telegram TypeScript
+description: "A video tutorial on building a basic Telegram bot with Deno, the secure runtime for JavaScript and TypeScript, covering the platform's key features."
 ---
 
 New Years Eve holidays is always a great chance to get into something new 🎄🎁

@@ -2,6 +2,7 @@
 title: Boxing и unboxing - что быстрее?
 tags: .NET IL performance
 redirect_from: "/Boxing_and_unboxing_performance/"
+locale: ru-RU
 ---
 
 Заинтересовавшись вопросом скорости работы операций упаковки и распаковки в .NET решил опубликовать свои небольшие и крайне субъективные наблюдения и измерения по этой теме. Код примера доступен на [github](https://github.com/FSou1/BoxingUnboxingBenchmark), поэтому приглашаю всех желающих сообщить о своих результатах измерений в комментариях.

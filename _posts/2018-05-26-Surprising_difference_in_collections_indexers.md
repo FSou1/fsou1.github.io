@@ -2,6 +2,7 @@
 title: Surprising difference in array and list indexers behaviour
 tags: .NET
 redirect_from: "/Surprising_difference_in_collections_indexers/"
+description: "Why indexing into an array and into a list can give different results in .NET, explained with a short C# quiz."
 ---
 
 If the existence of a difference between using an array's and list's indexers in .NET makes surprised not only me but you as well, then let's try to puzzle it out.

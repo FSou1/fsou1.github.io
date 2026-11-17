@@ -2,6 +2,7 @@
 title: How to create nested folders within Azure Blob container
 tags: .NET Azure
 redirect_from: "/Nested_folders_with_azure_blob_storage/"
+description: "Azure Blob storage has no real folders. Here is a workaround for grouping blobs into nested folders inside a container, with source code."
 ---
 
 Do you know that by default Azure Blob storage does not give you an opportunity to group your blobs with folders? But this post is intended to share with you one workaround. Feel free to find out the source codes at the end.

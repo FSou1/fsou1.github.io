@@ -1,0 +1,38 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# {{ site.title }}
+
+> {{ site.description | strip }}
+
+{{ site.author.name }} is a {{ site.social.job_title }} at {{ site.social.works_for }}, based in {{ site.author.location }}. This site holds his blog, work history, and side projects.
+
+## About
+
+- [About]({{ '/about/' | absolute_url }}): Who Maxim Zhukov is and what he works on
+- [Experience]({{ '/experience/' | absolute_url }}): Work history from 2008 to now
+- [Contact]({{ '/contact/' | absolute_url }}): How to get in touch about roles, consulting, and projects
+
+## Experience
+{% assign jobs = site.experience | sort: 'order' | reverse %}{% for job in jobs %}
+- [{{ job.title }}]({{ job.url | absolute_url }}): {{ job.excerpt | markdownify | strip_html | strip_newlines | strip | truncate: 220 }}{% endfor %}
+
+## Projects
+{% assign projects = site.projects | sort: 'order' | reverse %}{% for project in projects %}
+- [{{ project.title }}]({{ project.url | absolute_url }}): {{ project.excerpt | markdownify | strip_html | strip_newlines | strip | truncate: 220 }}{% endfor %}
+
+## Blog posts
+{% for post in site.posts %}{% unless post.locale == 'ru-RU' %}
+- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: '%Y-%m-%d' }}): {{ post.description | default: post.excerpt | markdownify | strip_html | strip_newlines | strip | truncate: 220 }}{% endunless %}{% endfor %}
+
+## Blog posts in Russian
+{% for post in site.posts %}{% if post.locale == 'ru-RU' %}
+- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: '%Y-%m-%d' }}){% endif %}{% endfor %}
+
+## Optional
+
+- [Atom feed]({{ '/feed.xml' | absolute_url }})
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})
+- [Resume (PDF)]({{ '/assets/Maxim_Zhukov_Resume.pdf' | absolute_url }})

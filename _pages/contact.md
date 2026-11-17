@@ -4,6 +4,7 @@ redirect_from:
   - /hire-me/
 title: "Contact"
 classes: wide
+description: "Contact Maxim Zhukov, Staff Software Engineer at PayPal, about frontend architecture, solution architecture, and full-stack development work."
 ---
 
 How can I help you? As a…

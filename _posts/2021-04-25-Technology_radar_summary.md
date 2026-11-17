@@ -1,6 +1,7 @@
 ---
 title: A Technology Radar Volume 24 summary
 tags: Frontend Backend
+description: "My personal summary of ThoughtWorks Technology Radar Volume 24: import-maps, AWS CDK, bit.dev, and other items worth a look."
 ---
 
 If you haven't read the latest [Technology Radar Volume 24](https://www.thoughtworks.com/radar#download-current-radar) yet, then let me share with you my personal summary of it:

@@ -1,6 +1,8 @@
 ---
 title: Code Together «Array Diff» Code Kata
 tags: CodeWars
+description: "A code-together video solving the Codewars kata «Array Diff», with a link to the source code."
+redirect_from: "/Code_together_array_diff copy/"
 ---
 
 Hey guys. If you think it is fun to code together (not only watching a video but also discuss solutions), then here is my another video. Your feedback is always welcomed and I hope you enjoy this video!

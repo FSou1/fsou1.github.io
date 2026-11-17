@@ -1,6 +1,8 @@
 ---
 title: Setup environment variables with Deno using dotenv
 tags: Deno Dotenv
+description: "A quick video tutorial on setting up environment variables in a Deno project with the dotenv package and .env files."
+redirect_from: "/Setup_environment_variables_with_Deno_using_dotenv copy/"
 ---
 
 How to setup environment variables for your Deno project using the dotenv package. This video is a quick tutorial to setting up your Deno project using environment variables and storing configuration data in .env files.

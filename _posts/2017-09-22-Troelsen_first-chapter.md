@@ -2,6 +2,7 @@
 title: По мотивам Andrew Troelsen №1 - Помните ли вы?
 tags: .NET
 redirect_from: "/Troelsen_first-chapter/"
+locale: ru-RU
 ---
 
 Выписываю ключевые моменты первой главы замечательной книжки C# 6.0 and the .NET 4.6 Framework.

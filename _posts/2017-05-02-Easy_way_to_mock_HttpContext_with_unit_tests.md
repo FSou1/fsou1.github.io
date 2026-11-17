@@ -2,6 +2,7 @@
 title: Простой способ сделать mock HttpContext для UnitTest-ов
 tags: .NET TDD
 redirect_from: "/Easy_way_to_mock_HttpContext_with_unit_tests/"
+locale: ru-RU
 ---
 
 На днях реализовывал `PerHttpRequestLifeTimeManager` для своего небольшого [IoC-контейнера](https://github.com/FSou1/FsContainer) и поэтому хочу поделиться простым способом использовать HttpContext в покрытии тестами.

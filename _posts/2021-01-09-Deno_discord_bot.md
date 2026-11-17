@@ -1,6 +1,7 @@
 ---
 title: Let's develop a Discord bot using Deno 🦕
 tags: Deno Discord TypeScript
+description: "A video tutorial on building a Discord bot with Deno, including how to add unit tests and run them."
 ---
 
 Hello everybody. Today we will continue to use the [Deno](https://deno.land/) framework and develop a Discord bot. We'll also add some unit tests and see how to run them.

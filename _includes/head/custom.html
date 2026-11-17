@@ -1,0 +1,95 @@
+<!-- start custom head snippets -->
+{%- assign home_url = '/' | absolute_url -%}
+{%- assign person_id = home_url | append: '#person' -%}
+{%- assign website_id = home_url | append: '#website' -%}
+{%- assign page_url = page.canonical_url | default: page.url | replace: '/index.html', '/' | absolute_url -%}
+{%- assign page_desc = page.description | default: page.excerpt | default: site.description | markdownify | strip_html | strip_newlines | strip -%}
+{%- assign page_lang = page.locale | default: site.locale | default: 'en-US' -%}
+
+{%- comment %} The theme only prints Twitter/X card tags when site.twitter.username is set. {% endcomment %}
+{%- unless site.twitter.username %}
+<meta name="twitter:card" content="{% if page.header.og_image %}summary_large_image{% else %}summary{% endif %}">
+{%- endunless %}
+
+{%- capture person_json %}
+{
+  "@type": "Person",
+  "@id": {{ person_id | jsonify }},
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ home_url | jsonify }},
+  "image": {{ site.author.avatar | absolute_url | jsonify }},
+  "description": {{ site.author.bio | jsonify }},
+  "jobTitle": {{ site.social.job_title | jsonify }},
+  "worksFor": { "@type": "Organization", "name": {{ site.social.works_for | jsonify }} },
+  "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+  "knowsAbout": {{ site.social.knows_about | jsonify }},
+  "sameAs": {{ site.social.links | jsonify }}
+}
+{%- endcapture %}
+
+{%- if page.url == '/' or page.url == '/about/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ website_id | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | strip | jsonify }},
+      "inLanguage": {{ site.locale | default: 'en-US' | jsonify }},
+      "publisher": { "@id": {{ person_id | jsonify }} }
+    },
+    {%- if page.url == '/about/' %}
+    {
+      "@type": "ProfilePage",
+      "@id": {{ page_url | jsonify }},
+      "url": {{ page_url | jsonify }},
+      "name": {{ page.title | jsonify }},
+      "isPartOf": { "@id": {{ website_id | jsonify }} },
+      "mainEntity": { "@id": {{ person_id | jsonify }} }
+    },
+    {%- endif %}
+    {{ person_json }}
+  ]
+}
+</script>
+{%- elsif page.collection == 'posts' %}
+{%- assign post_image = page.header.og_image | default: page.header.teaser | default: site.og_image | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": {{ page_url | append: '#article' | jsonify }},
+      "mainEntityOfPage": { "@type": "WebPage", "@id": {{ page_url | jsonify }} },
+      "url": {{ page_url | jsonify }},
+      "headline": {{ page.title | markdownify | strip_html | strip_newlines | strip | jsonify }},
+      "description": {{ page_desc | jsonify }},
+      "image": {{ post_image | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+      "inLanguage": {{ page_lang | jsonify }},
+      {%- if page.tags.size > 0 %}
+      "keywords": {{ page.tags | join: ', ' | jsonify }},
+      {%- endif %}
+      "isPartOf": { "@id": {{ website_id | jsonify }} },
+      "author": { "@id": {{ person_id | jsonify }} },
+      "publisher": { "@id": {{ person_id | jsonify }} }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ home_url | jsonify }} },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": {{ '/posts/' | absolute_url | jsonify }} },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | markdownify | strip_html | strip_newlines | strip | jsonify }} }
+      ]
+    },
+    {{ person_json }}
+  ]
+}
+</script>
+{%- endif %}
+<!-- end custom head snippets -->

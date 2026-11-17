@@ -1,6 +1,7 @@
 ---
 title: Friday Quiz or Emoji are weird in JavaScript
 tags: JavaScript Emoji Length
+description: "Why '👩‍👩‍👧‍👧'.length is 11 in JavaScript, and why different emoji report different string lengths."
 ---
 
 Can you guess, what will be the output `'👩‍👩‍👧‍👧'.length // ?`?

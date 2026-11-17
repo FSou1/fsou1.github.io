@@ -2,6 +2,7 @@
 title: Пишем свой маппер для .NET Standard 2.0
 tags: .NET C# performance
 redirect_from: "/Yet_another_mapper/"
+locale: ru-RU
 ---
 
 В сегодняшней заметке я хотел бы поведать вам о коротком приключении по написанию своего маппера для .NET Standard 2.0. Ссылка на github и результаты benchmark'ов прилагаются.

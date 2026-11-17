@@ -1,6 +1,7 @@
 ---
 title: 3 Ways to Solve «Your order, please» Code Kata
 tags: CodeWars
+description: "A video walkthrough of three ways to solve the Codewars kata «Your order, please», with a link to the source code."
 ---
 
 Hey folks, if you have practiced code kata then you know how fun and challenging it is. I hope you enjoy this video!

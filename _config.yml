@@ -16,7 +16,35 @@
 title: "Maxim Zhukov"
 masthead_title: " "
 email: maxim.zhukov.dev@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "url:"
+  Engineering blog of Maxim Zhukov, Staff Software Engineer and Frontend
+  Architect at PayPal. Posts on frontend architecture, React, TypeScript,
+  design systems, web performance, testing, and .NET.
+url: "https://fsou1.github.io"
+baseurl: ""
+locale: "en-US"
+og_image: /assets/images/bio-photo.png
+og_image_alt: "Maxim Zhukov"
+# Used by _includes/head/custom.html to build the Person structured data (JSON-LD)
+social:
+  type: Person
+  name: "Maxim Zhukov"
+  job_title: "Staff Software Engineer"
+  works_for: "PayPal"
+  knows_about:
+    - Frontend architecture
+    - React
+    - TypeScript
+    - Design systems
+    - Web performance
+    - Visual regression testing
+    - Node.js
+    - .NET
+  links:
+    - "https://www.linkedin.com/in/maxim-zhukov-dev/"
+    - "https://github.com/FSou1"
+    - "https://www.youtube.com/@SeasonedDev"
+    - "https://t.me/seasoneddev"
 
 github_username: fsou1
 minimal_mistakes_skin: default

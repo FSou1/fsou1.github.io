@@ -1,6 +1,7 @@
 ---
 title: Let's Deploy a Deno App to Heroku 🦕
 tags: Deno Heroku CICD
+description: "A video tutorial on configuring a deployment process and deploying a Deno REST API to Heroku."
 ---
 
 We have already developed a REST API using Deno on Linux, protected it with the JWT authentication, and connected it to the MongoDb Atlas. To complete this story, we need to configure our deployment process and deploy the app to the cloud. So this is what this video is about, let's get started.

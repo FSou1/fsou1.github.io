@@ -2,6 +2,7 @@
 title: What is Azure App Configuration?
 tags: .NET Azure Architecture
 redirect_from: "/What_is_azure_app_configuration/"
+description: "An introduction to Azure App Configuration, the Azure service for managing application and feature settings, and why you would use it."
 ---
 
 Hey guys! Today, I'd like to tell you about a new azure service called Azure App Configuration.
