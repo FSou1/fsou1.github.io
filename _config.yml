@@ -23,6 +23,7 @@ description: >- # this means to ignore newlines until "url:"
 url: "https://fsou1.github.io"
 baseurl: ""
 locale: "en-US"
+google_site_verification: "qvyg7YGJSrbR3Cc4u_qwqZIlWe170Lq6kOWMh7-eEGM"
 og_image: /assets/images/bio-photo.png
 og_image_alt: "Maxim Zhukov"
 # Used by _includes/head/custom.html to build the Person structured data (JSON-LD)
